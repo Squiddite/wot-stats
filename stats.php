@@ -21,8 +21,7 @@
       // only hit api once per hour
       $hitApi = true;
       $apiStats = file_get_contents( "http://api.worldoftanks.com/community/accounts/{$playerId}/api/1.9/?source_token=WG-WoT_Assistant-1.4.1" );
-      $cacheFile = fopen( "cache/{$playerId}/{$currentTime}.cache", "w+" );
-      fwrite( $cacheFile, $apiStats );
+      cacheApiData( $cacheFile, $playerId, $currentTime );
       $statsObject = json_decode( $apiStats, false );
       $mystats->statsdate->current  = $statsObject->data->updated_at;
       $mystats->battles->current    = $statsObject->data->summary->battles_count;
@@ -202,7 +201,7 @@
    if( $hitApi ) {
       $apiMsg = "updated from webservice";
    } else {
-      $nextHit = ceil(( strtotime( $lastApiHit ) + 3600 - strtotime( $currentTime )) / 60 );
+      $nextHit = ceil(( 3600 - ( $currentTime - $lastApiHit )) / 60 );
       $apiMsg = "cached; next check in {$nextHit} minutes";
    }
 
@@ -318,4 +317,11 @@ function calculateWN7( $battles, $winrate, $detections, $defense, $kills, $damag
    return $wn7;
 }
 
+function cacheApiData( $data, $playerId, $currentTime ) {
+   if( !file_exists( "cache" )) mkdir( "cache" );
+   if( !file_exists( "cache/{$playerId}" )) mkdir( "cache/{$playerId}" );
+
+   $cacheFile = fopen( "cache/{$playerId}/{$currentTime}.cache", "w+" );
+   fwrite( $cacheFile, $data );
+}
 ?>
