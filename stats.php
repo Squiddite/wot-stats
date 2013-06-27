@@ -1,5 +1,5 @@
 <?
-   require( "dbConn.php" );
+   require( "dbConn.class" );
    $dbConnection = new dbConn();
    $mysqli = $dbConnection->getDatabaseConnection();
 
