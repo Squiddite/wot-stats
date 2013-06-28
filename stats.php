@@ -191,12 +191,24 @@
 
    }
 
-   $mystats->winrate->current    = round( $mystats->winrate->current, 2 );
-   $mystats->winrate->checkpoint = round( $mystats->winrate->checkpoint, 2 );
-   $mystats->winrate->delta      = round( $mystats->winrate->delta, 2 );
-   $mystats->avgtier->current    = round( $mystats->avgtier->current, 2 );
-   $mystats->avgtier->checkpoint = round( $mystats->avgtier->checkpoint, 2 );
-   $mystats->avgtier->delta      = round( $mystats->avgtier->delta, 2 );
+   $mystats->winrate->current          = round( $mystats->winrate->current, 2 );
+   $mystats->winrate->checkpoint       = round( $mystats->winrate->checkpoint, 2 );
+   $mystats->winrate->delta            = round( $mystats->winrate->delta, 2 );
+   $mystats->avgtier->current          = round( $mystats->avgtier->current, 2 );
+   $mystats->avgtier->checkpoint       = round( $mystats->avgtier->checkpoint, 2 );
+   $mystats->avgtier->delta            = round( $mystats->avgtier->delta, 2 );
+   $mystats->avgkills->current         = round( $mystats->avgkills->current, 2 );
+   $mystats->avgkills->checkpoint      = round( $mystats->avgkills->checkpoint, 2 );
+   $mystats->avgkills->delta           = round( $mystats->avgkills->delta, 2 );
+   $mystats->avgdamage->current        = round( $mystats->avgdamage->current, 2 );
+   $mystats->avgdamage->checkpoint     = round( $mystats->avgdamage->checkpoint, 2 );
+   $mystats->avgdamage->delta          = round( $mystats->avgdamage->delta, 2 );
+   $mystats->avgdetections->current    = round( $mystats->avgdetections->current, 2 );
+   $mystats->avgdetections->checkpoint = round( $mystats->avgdetections->checkpoint, 2 );
+   $mystats->avgdetections->delta      = round( $mystats->avgdetections->delta, 2 );
+   $mystats->avgdefense->current       = round( $mystats->avgdefense->current, 2 );
+   $mystats->avgdefense->checkpoint    = round( $mystats->avgdefense->checkpoint, 2 );
+   $mystats->avgdefense->delta         = round( $mystats->avgdefense->delta, 2 );
 
    if( $hitApi ) {
       $apiMsg = "updated from webservice";
@@ -243,25 +255,23 @@
       <td>{$mystats->detections->interval}</td>
    </tr>
    <tr>
-      <td><b>Cap Points Reset</b></td>
-      <td>{$mystats->defense->checkpoint}</td>
-      <td>{$mystats->defense->current}</td>
-      <td>{$mystats->defense->interval}</td>
+      <td><b>Enemies Killed / <font size=-1><b>Avg.</b></font></b></td>
+      <td>{$mystats->kills->checkpoint} / <font size=-1>{$mystats->avgkills->checkpoint}</font></td>
+      <td>{$mystats->kills->current} / <font size=-1>{$mystats->avgkills->current}</font></td>
+      <td>{$mystats->kills->interval} / <font size=-1>{$mystats->avgkills->interval}</font></td>
    </tr>
    <tr>
-      <td><b>Enemies Killed</b></td>
-      <td>{$mystats->kills->checkpoint}</td>
-      <td>{$mystats->kills->current}</td>
-      <td>{$mystats->kills->interval}</td>
+      <td><b>Average Defense</b></td>
+      <td>{$mystats->avgdefense->checkpoint}</td>
+      <td>{$mystats->avgdefense->current}</td>
+      <td>{$mystats->avgdefense->interval}</td>
    </tr>
-   <!--
    <tr>
-      <td><font size=-1><b>Damage Dealt</b></font></td>
-      <td><font size=-1>{$mystats->damage->checkpoint}</font></td>
-      <td><font size=-1>{$mystats->damage->current}</font></td>
-      <td><font size=-1>{$mystats->damage->interval}</font></td>
+      <td><b>Average Damage</b></td>
+      <td>{$mystats->avgdamage->checkpoint}</td>
+      <td>{$mystats->avgdamage->current}</td>
+      <td>{$mystats->avgdamage->interval}</td>
    </tr>
-   -->
    <tr>
       <td><b>Average Tier</b></td>
       <td>{$mystats->avgtier->checkpoint}</td>
@@ -290,7 +300,6 @@
    </thead>
 EOE;
 
-//foreach( $mystats->interval->tanks as $tankstat ) {
 foreach( $tankSort as $tankname => $battles ) {
    echo <<<EOE
    <tr>
