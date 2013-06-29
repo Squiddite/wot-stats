@@ -21,7 +21,7 @@
       // only hit api once per hour
       $hitApi = true;
       $apiStats = file_get_contents( "http://api.worldoftanks.com/community/accounts/{$playerId}/api/1.9/?source_token=WG-WoT_Assistant-1.4.1" );
-      cacheApiData( $cacheFile, $playerId, $currentTime );
+      cacheApiData( $apiStats, $playerId, $currentTime );
       $statsObject = json_decode( $apiStats, false );
       $mystats->statsdate->current  = $statsObject->data->updated_at;
       $mystats->battles->current    = $statsObject->data->summary->battles_count;
