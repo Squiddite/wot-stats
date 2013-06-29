@@ -334,3 +334,4 @@ function cacheApiData( $data, $playerId, $currentTime ) {
    fwrite( $cacheFile, $data );
 }
 ?>
+
