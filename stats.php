@@ -193,6 +193,9 @@
       asort( $tankSort );
       $tankSort = array_reverse( $tankSort );
 
+      $statImprovements = improveWN7( $mystats->interval->battles, $mystats->interval->winrate, $mystats->interval->avgdetections, $mystats->interval->avgdefense, $mystats->interval->avgkills, $mystats->interval->avgdamage, $mystats->interval->avgtier );
+      asort( $statImprovements );
+      $statImprovements = array_reverse( $statImprovements );
    }
 
    $mystats->current->winrate          = round( $mystats->current->winrate, 2 );
@@ -316,7 +319,70 @@ if( $mystats->current->battles > $mystats->checkpoint->battles ) {
 
 EOE;
    }
-echo "</table>\r\n</div>\r\n";
+   echo <<<EOE
+</table>
+</div>
+<br /><br />
+
+<div>
+<span>Suggestions for improvement: <br /></span>
+<table border=0 cellpadding=3 cellspacing=0>
+   <thead>
+   <tr bgcolor=e2e2e2>
+      <td><b>Category<b/></td>
+      <td><b>WN7</b></td>
+      <td><b>Increase</b></td>
+   </tr>
+   </thead>
+
+EOE;
+   foreach( $statImprovements as $type => $improvement ) {
+      switch( $type ) {
+       case "winrate":
+         $category = "Improved winrate";
+         break;
+       case "winrate2":
+         $category = "Baseline winrate";
+         break;
+       case "kills":
+         $category = "Improved kills";
+         break;
+       case "kills2":
+         $category = "Baseline kills";
+         break;
+       case "detections":
+         $category = "Improved detections";
+         break;
+       case "detections2":
+         $category = "Baseline detections";
+         break;
+       case "defense":
+         $category = "Improved defense";
+         break;
+       case "defense2":
+         $category = "Baseline defense";
+         break;
+       case "damage":
+         $category = "Improved damage";
+         break;
+       case "damage2":
+         $category = "Baseline damage";
+         break;
+      }
+
+      $improvementAmt = $improvement - $mystats->interval->wn7;
+      $improvementPct = round(( $improvement / $mystats->interval->wn7 ), 2 );
+      if( $improvementAmt > 0 ) $token = "+"; else $token = "";
+      if( $improvementAmt > 0 ) $color = "green"; else $color = "red";
+      echo <<<EOE
+   <tr>
+      <td><b>{$category}</b></td>
+      <td>{$improvement}</td>
+      <td>{$improvementAmt} <font size=-1 color={$color}>({$token}{$improvementPct}%)</font></td>
+   </tr>
+EOE;
+   }
+echo "</table></div><br /><br />\r\n";
 }
 
 function calculateWN7( $battles, $winrate, $detections, $defense, $kills, $damage, $averagetier ) {
@@ -338,6 +404,24 @@ function cacheApiData( $data, $playerId, $currentTime ) {
 
    $cacheFile = fopen( "cache/{$playerId}/{$currentTime}.cache", "w+" );
    fwrite( $cacheFile, $data );
+}
+function improveWN7( $battles, $winrate, $detections, $defense, $kills, $damage, $avgtier, $multiplier = 1.1 ) {
+   $statArr["winrate"] = calculateWN7( $battles, ( $winrate * $multiplier ), $detections, $defense, $kills, $damage, $avgtier );
+   $statArr["winrate2"] = calculateWN7( $battles, 50, $detections, $defense, $kills, $damage, $avgtier );
+
+   $statArr["detections"] = calculateWN7( $battles, $winrate, ( $detections * $multiplier ), $defense, $kills, $damage, $avgtier );
+   $statArr["detections2"] = calculateWN7( $battles, $winrate, 1.25, $defense, $kills, $damage, $avgtier );
+
+   $statArr["defense"] = calculateWN7( $battles, $winrate, $detections, ( $defense * $multiplier ), $kills, $damage, $avgtier );
+   $statArr["defense2"] = calculateWN7( $battles, $winrate, $detections, 1, $kills, $damage, $avgtier );
+
+   $statArr["kills"] = calculateWN7( $battles, $winrate, $detections, $defense, ( $kills * $multiplier ), $damage, $avgtier );
+   $statArr["kills2"] = calculateWN7( $battles, $winrate, $detections, $defense, 1.5, $damage, $avgtier );
+
+   $statArr["damage"] = calculateWN7( $battles, $winrate, $detections, $defense, $kills, ( $damage * $multiplier ), $avgtier );
+   $statArr["damage2"] = calculateWN7( $battles, $winrate, $detections, $defense, $kills, 1250, $avgtier );
+
+   return $statArr;
 }
 ?>
 
