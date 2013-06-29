@@ -189,31 +189,35 @@
       if( $mystats->delta->wn7 > 0 ) $color["wn7"] = "green"; else $color["wn7"] = "red";
       if( $mystats->delta->wn7 > 0 ) $token["wn7"] = "+";
 
+      foreach( $mystats->interval->tanks as $tankname => $vehicle ) $tankSort[$tankname] = $vehicle->battles;
+      asort( $tankSort );
+      $tankSort = array_reverse( $tankSort );
+
    }
 
    $mystats->current->winrate          = round( $mystats->current->winrate, 2 );
    $mystats->checkpoint->winrate       = round( $mystats->checkpoint->winrate, 2 );
-   $mystats->interval->winrate            = round( $mystats->interval->winrate, 2 );
+   $mystats->interval->winrate         = round( $mystats->interval->winrate, 2 );
    $mystats->delta->winrate            = round( $mystats->delta->winrate, 2 );
    $mystats->current->avgtier          = round( $mystats->current->avgtier, 2 );
    $mystats->checkpoint->avgtier       = round( $mystats->checkpoint->avgtier, 2 );
-   $mystats->interval->avgtier            = round( $mystats->interval->avgtier, 2 );
+   $mystats->interval->avgtier         = round( $mystats->interval->avgtier, 2 );
    $mystats->delta->avgtier            = round( $mystats->delta->avgtier, 2 );
    $mystats->current->avgkills         = round( $mystats->current->avgkills, 2 );
    $mystats->checkpoint->avgkills      = round( $mystats->checkpoint->avgkills, 2 );
-   $mystats->interval->avgkills           = round( $mystats->interval->avgkills, 2 );
+   $mystats->interval->avgkills        = round( $mystats->interval->avgkills, 2 );
    $mystats->delta->avgkills           = round( $mystats->delta->avgkills, 2 );
    $mystats->current->avgdamage        = round( $mystats->current->avgdamage, 2 );
    $mystats->checkpoint->avgdamage     = round( $mystats->checkpoint->avgdamage, 2 );
-   $mystats->interval->avgdamage          = round( $mystats->interval->avgdamage, 2 );
+   $mystats->interval->avgdamage       = round( $mystats->interval->avgdamage, 2 );
    $mystats->delta->avgdamage          = round( $mystats->delta->avgdamage, 2 );
    $mystats->current->avgdetections    = round( $mystats->current->avgdetections, 2 );
    $mystats->checkpoint->avgdetections = round( $mystats->checkpoint->avgdetections, 2 );
-   $mystats->interval->avgdetections      = round( $mystats->interval->avgdetections, 2 );
+   $mystats->interval->avgdetections   = round( $mystats->interval->avgdetections, 2 );
    $mystats->delta->avgdetections      = round( $mystats->delta->avgdetections, 2 );
    $mystats->current->avgdefense       = round( $mystats->current->avgdefense, 2 );
    $mystats->checkpoint->avgdefense    = round( $mystats->checkpoint->avgdefense, 2 );
-   $mystats->interval->avgdefense         = round( $mystats->interval->avgdefense, 2 );
+   $mystats->interval->avgdefense      = round( $mystats->interval->avgdefense, 2 );
    $mystats->delta->avgdefense         = round( $mystats->delta->avgdefense, 2 );
 
    if( $hitApi ) {
@@ -222,12 +226,6 @@
       $nextHit = ceil(( 3600 - ( $currentTime - $lastApiHit )) / 60 );
       $apiMsg = "cached; next check in {$nextHit} minutes";
    }
-
-   foreach( $mystats->interval->tanks as $tankname => $vehicle ) {
-      $tankSort[$tankname] = $vehicle->battles;
-   }
-   asort( $tankSort );
-   $tankSort = array_reverse( $tankSort );
 
    $properDatestamp = date( "Y-m-d H:i", $mystats->current->statsdate );
    echo <<<EOE
@@ -306,8 +304,9 @@
    </thead>
 EOE;
 
-foreach( $tankSort as $tankname => $battles ) {
-   echo <<<EOE
+if( $mystats->current->battles > $mystats->checkpoint->battles ) {
+   foreach( $tankSort as $tankname => $battles ) {
+      echo <<<EOE
    <tr>
       <td><b>{$mystats->interval->tanks[$tankname]->tankname}</b></td>
       <td>{$mystats->interval->tanks[$tankname]->battles}</td>
@@ -316,8 +315,9 @@ foreach( $tankSort as $tankname => $battles ) {
    </tr>
 
 EOE;
-}
+   }
 echo "</table>\r\n</div>\r\n";
+}
 
 function calculateWN7( $battles, $winrate, $detections, $defense, $kills, $damage, $averagetier ) {
 //   echo "WN7 = \tbattles: ${battles}, winrate: {$winrate}, detections: {$detections}, defense: {$defense}, kills: {$kills}, avgtier: {$averagetier}<br />\r\n";
