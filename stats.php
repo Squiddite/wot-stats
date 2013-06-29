@@ -330,6 +330,7 @@ EOE;
    <thead>
    <tr bgcolor=e2e2e2>
       <td><b>Category<b/></td>
+      <td><b>Suggestion<b/></td>
       <td><b>WN7</b></td>
       <td><b>Increase</b></td>
    </tr>
@@ -339,44 +340,55 @@ EOE;
    foreach( $statImprovements as $type => $improvement ) {
       switch( $type ) {
        case "winrate":
-         $category = "Improved winrate";
+         $category = "Winrate";
+         $suggestion = "Improve your winrate by 10%";
          break;
        case "winrate2":
-         $category = "Baseline winrate";
+         $category = "Winrate";
+         $suggestion = "Win at least half your matches";
          break;
        case "kills":
-         $category = "Improved kills";
+         $category = "Kills";
+         $suggestion = "Score 10% more kills";
          break;
        case "kills2":
-         $category = "Baseline kills";
+         $category = "Kills";
+         $suggestion = "Average 1.5 kills per battle";
          break;
        case "detections":
-         $category = "Improved detections";
+         $category = "Scouting";
+         $suggestion = "Spot 10% more enemy tanks";
          break;
        case "detections2":
-         $category = "Baseline detections";
+         $category = "Scouting";
+         $suggestion = "Detect at least 1.25 tanks per battle";
          break;
        case "defense":
-         $category = "Improved defense";
+         $category = "Defense";
+         $suggestion = "Farm 10% more defender points";
          break;
        case "defense2":
-         $category = "Baseline defense";
+         $category = "Defense";
+         $suggestion = "Reset at least 1 point per battle";
          break;
        case "damage":
-         $category = "Improved damage";
+         $category = "Damage";
+         $suggestion = "Do 10% more damage";
          break;
        case "damage2":
-         $category = "Baseline damage";
+         $category = "Damage";
+         $suggestion = "Average at least 1250 damage";
          break;
       }
 
       $improvementAmt = $improvement - $mystats->interval->wn7;
       $improvementPct = round(( $improvement / $mystats->interval->wn7 ), 2 );
-      if( $improvementAmt > 0 ) $token = "+"; else $token = "";
+      if( $improvementAmt > 0 ) $token = "+"; else $token = "-";
       if( $improvementAmt > 0 ) $color = "green"; else $color = "red";
       echo <<<EOE
    <tr>
       <td><b>{$category}</b></td>
+      <td>{$suggestion}</td>
       <td>{$improvement}</td>
       <td>{$improvementAmt} <font size=-1 color={$color}>({$token}{$improvementPct}%)</font></td>
    </tr>
@@ -386,7 +398,6 @@ echo "</table></div><br /><br />\r\n";
 }
 
 function calculateWN7( $battles, $winrate, $detections, $defense, $kills, $damage, $averagetier ) {
-//   echo "WN7 = \tbattles: ${battles}, winrate: {$winrate}, detections: {$detections}, defense: {$defense}, kills: {$kills}, avgtier: {$averagetier}<br />\r\n";
    $wn7 = round(( 1240 - 1040 / ( pow( min( $averagetier, 6 ), 0.164 ))) * $kills
       + $damage * 530 / ( 184 * exp( 0.24 * $averagetier ) + 130 )
       + $detections * 125 * ( min( $averagetier, 3 )) / 3
@@ -406,20 +417,32 @@ function cacheApiData( $data, $playerId, $currentTime ) {
    fwrite( $cacheFile, $data );
 }
 function improveWN7( $battles, $winrate, $detections, $defense, $kills, $damage, $avgtier, $multiplier = 1.1 ) {
-   $statArr["winrate"] = calculateWN7( $battles, ( $winrate * $multiplier ), $detections, $defense, $kills, $damage, $avgtier );
-   $statArr["winrate2"] = calculateWN7( $battles, 50, $detections, $defense, $kills, $damage, $avgtier );
+   $targetWinrate    = 50;
+   $targetDetections = 1.25;
+   $targetDefense    = 1;
+   $targetKills      = 1.5;
+   $targetDamage     = 1250;
 
-   $statArr["detections"] = calculateWN7( $battles, $winrate, ( $detections * $multiplier ), $defense, $kills, $damage, $avgtier );
-   $statArr["detections2"] = calculateWN7( $battles, $winrate, 1.25, $defense, $kills, $damage, $avgtier );
+   $impWinrate1 = calculateWN7( $battles, ( $winrate * $multiplier ), $detections, $defense, $kills, $damage, $avgtier );
+   $impWinrate2 = calculateWN7( $battles, $targetWinrate, $detections, $defense, $kills, $damage, $avgtier );
 
-   $statArr["defense"] = calculateWN7( $battles, $winrate, $detections, ( $defense * $multiplier ), $kills, $damage, $avgtier );
-   $statArr["defense2"] = calculateWN7( $battles, $winrate, $detections, 1, $kills, $damage, $avgtier );
+   $impDetections1 = calculateWN7( $battles, $winrate, ( $detections * $multiplier ), $defense, $kills, $damage, $avgtier );
+   $impDetections2 = calculateWN7( $battles, $winrate, $targetDetections, $defense, $kills, $damage, $avgtier );
 
-   $statArr["kills"] = calculateWN7( $battles, $winrate, $detections, $defense, ( $kills * $multiplier ), $damage, $avgtier );
-   $statArr["kills2"] = calculateWN7( $battles, $winrate, $detections, $defense, 1.5, $damage, $avgtier );
+   $impDefense1 = calculateWN7( $battles, $winrate, $detections, ( $defense * $multiplier ), $kills, $damage, $avgtier );
+   $impDefense2 = calculateWN7( $battles, $winrate, $detections, $targetDefense, $kills, $damage, $avgtier );
 
-   $statArr["damage"] = calculateWN7( $battles, $winrate, $detections, $defense, $kills, ( $damage * $multiplier ), $avgtier );
-   $statArr["damage2"] = calculateWN7( $battles, $winrate, $detections, $defense, $kills, 1250, $avgtier );
+   $impKills1 = calculateWN7( $battles, $winrate, $detections, $defense, ( $kills * $multiplier ), $damage, $avgtier );
+   $impKills2 = calculateWN7( $battles, $winrate, $detections, $defense, $targetKills, $damage, $avgtier );
+
+   $impDamage1 = calculateWN7( $battles, $winrate, $detections, $defense, $kills, ( $damage * $multiplier ), $avgtier );
+   $impDamage2 = calculateWN7( $battles, $winrate, $detections, $defense, $kills, $targetDamage, $avgtier );
+
+   if( $impWinrate1 > $impWinrate2 ) $statArr["winrate"] = $impWinrate1; else $statArr["winrate2"] = $impWinrate2;
+   if( $impDetections1 > $impDetections2 ) $statArr["detections"] = $impDetections1; else $statArr["detections2"] = $impDetections2;
+   if( $impDefense1 > $impDefense2 ) $statArr["defense"] = $impDefense1; else $statArr["defense2"] = $impDefense2;
+   if( $impKills1 > $impKills2 ) $statArr["kills"] = $impKills1; else $statArr["kills2"] = $impKills2;
+   if( $impDamage1 > $impDamage2 ) $statArr["damage"] = $impDamage1; else $statArr["damage2"] = $impDamage2;
 
    return $statArr;
 }
