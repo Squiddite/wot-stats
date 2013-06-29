@@ -23,13 +23,13 @@
       $apiStats = file_get_contents( "http://api.worldoftanks.com/community/accounts/{$playerId}/api/1.9/?source_token=WG-WoT_Assistant-1.4.1" );
       cacheApiData( $cacheFile, $playerId, $currentTime );
       $statsObject = json_decode( $apiStats, false );
-      $mystats->statsdate->current  = $statsObject->data->updated_at;
-      $mystats->battles->current    = $statsObject->data->summary->battles_count;
-      $mystats->victories->current  = $statsObject->data->summary->wins;
-      $mystats->detections->current = $statsObject->data->battles->spotted;
-      $mystats->defense->current    = $statsObject->data->battles->dropped_capture_points;
-      $mystats->kills->current      = $statsObject->data->battles->frags;
-      $mystats->damage->current     = $statsObject->data->battles->damage_dealt;
+      $mystats->current->statsdate  = $statsObject->data->updated_at;
+      $mystats->current->battles    = $statsObject->data->summary->battles_count;
+      $mystats->current->victories  = $statsObject->data->summary->wins;
+      $mystats->current->detections = $statsObject->data->battles->spotted;
+      $mystats->current->defense    = $statsObject->data->battles->dropped_capture_points;
+      $mystats->current->kills      = $statsObject->data->battles->frags;
+      $mystats->current->damage     = $statsObject->data->battles->damage_dealt;
       foreach( $statsObject->data->vehicles as $vehicle ) {
          $battlesAtTier[$vehicle->level] += $vehicle->battle_count;
          $weightedBattles += $vehicle->battle_count * $vehicle->level;
@@ -42,12 +42,12 @@
          $tank->winrate = round(( $vehicle->win_count / $vehicle->battle_count * 100 ), 2 );
          $mystats->current->tanks[$tank->tankname] = clone $tank;
       }
-      $mystats->weightedBattles->current = $weightedBattles;
-      $mystats->avgtier->current    = $mystats->weightedBattles->current / $mystats->battles->current;
+      $mystats->current->weightedBattles = $weightedBattles;
+      $mystats->current->avgtier    = $mystats->current->weightedBattles / $mystats->current->battles;
 
       $checkpoint = 0;
       if(( $currentTime - $statsObject->data->updated_at ) >= 21600 ) $checkpoint = 1;
-      $sql = "insert into wotstats ( playerid, cachedate, statsdate, battles, victories, detections, defense, kills, damage, checkpoint ) values ( {$playerId}, '{$currentTime}', '{$mystats->statsdate->current}', {$mystats->battles->current}, {$mystats->victories->current}, {$mystats->detections->current}, {$mystats->defense->current}, {$mystats->kills->current}, {$mystats->damage->current}, {$checkpoint} )";
+      $sql = "insert into wotstats ( playerid, cachedate, statsdate, battles, victories, detections, defense, kills, damage, checkpoint ) values ( {$playerId}, '{$currentTime}', '{$mystats->current->statsdate}', {$mystats->current->battles}, {$mystats->current->victories}, {$mystats->current->detections}, {$mystats->current->defense}, {$mystats->current->kills}, {$mystats->current->damage}, {$checkpoint} )";
       $mysqli->query( $sql );
       $newStatId = $mysqli->insert_id;
 
@@ -62,14 +62,14 @@
       // load cached data instead
       $result = $mysqli->query( "select * from wotstats where playerid = {$playerId} order by cachedate desc limit 1" );
       $ls = $result->fetch_assoc();
-      $mystats->statsdate->current  = (int) $ls["statsdate"];
-      $mystats->battles->current    = (int) $ls["battles"];
-      $mystats->victories->current  = (int) $ls["victories"];
-      $mystats->detections->current = (int) $ls["detections"];
-      $mystats->defense->current    = (int) $ls["defense"];
-      $mystats->kills->current      = (int) $ls["kills"];
-      $mystats->damage->current     = (int) $ls["damage"];
-      $mystats->avgtier->current    = (float) $ls["avgtier"];
+      $mystats->current->statsdate  = (int) $ls["statsdate"];
+      $mystats->current->battles    = (int) $ls["battles"];
+      $mystats->current->victories  = (int) $ls["victories"];
+      $mystats->current->detections = (int) $ls["detections"];
+      $mystats->current->defense    = (int) $ls["defense"];
+      $mystats->current->kills      = (int) $ls["kills"];
+      $mystats->current->damage     = (int) $ls["damage"];
+      $mystats->current->avgtier    = (float) $ls["avgtier"];
 
       $result = $mysqli->query( "select * from wotstats_tanks where statid = {$ls["id"]} " );
       while( $vehicle = $result->fetch_assoc() ) {
@@ -84,16 +84,16 @@
          $tank->winrate = round(( $vehicle["victories"] / $vehicle["battles"] * 100 ), 2 );
          $mystats->current->tanks[$tank->tankname] = clone $tank;
       }
-      $mystats->weightedBattles->current = $weightedBattles;
-      $mystats->avgtier->current    = $mystats->weightedBattles->current / $mystats->battles->current;
+      $mystats->current->weightedBattles = $weightedBattles;
+      $mystats->current->avgtier    = $mystats->current->weightedBattles / $mystats->current->battles;
 
    }
-   $mystats->winrate->current       = $mystats->victories->current / $mystats->battles->current * 100;
-   $mystats->avgkills->current      = $mystats->kills->current / $mystats->battles->current;
-   $mystats->avgdamage->current     = $mystats->damage->current / $mystats->battles->current;
-   $mystats->avgdetections->current = $mystats->detections->current / $mystats->battles->current;
-   $mystats->avgdefense->current    = $mystats->defense->current / $mystats->battles->current;
-   $mystats->wn7->current           = calculateWN7( $mystats->battles->current, $mystats->winrate->current, $mystats->avgdetections->current, $mystats->avgdefense->current, $mystats->avgkills->current, $mystats->avgdamage->current, $mystats->avgtier->current );
+   $mystats->current->winrate       = $mystats->current->victories / $mystats->current->battles * 100;
+   $mystats->current->avgkills      = $mystats->current->kills / $mystats->current->battles;
+   $mystats->current->avgdamage     = $mystats->current->damage / $mystats->current->battles;
+   $mystats->current->avgdetections = $mystats->current->detections / $mystats->current->battles;
+   $mystats->current->avgdefense    = $mystats->current->defense / $mystats->current->battles;
+   $mystats->current->wn7           = calculateWN7( $mystats->current->battles, $mystats->current->winrate, $mystats->current->avgdetections, $mystats->current->avgdefense, $mystats->current->avgkills, $mystats->current->avgdamage, $mystats->current->avgtier );
 
    // load last checkpoint
    $hasCheckpoint = false;
@@ -104,13 +104,13 @@
    if( $hasCheckpoint ) {
       $result = $mysqli->query( "select * from wotstats where playerid = {$playerId} and checkpoint = 1 order by cachedate desc limit 1" );
       $cp = $result->fetch_assoc();
-      $mystats->statsdate->checkpoint     = $cp["statsdate"];
-      $mystats->battles->checkpoint       = $cp["battles"];
-      $mystats->victories->checkpoint     = $cp["victories"];
-      $mystats->detections->checkpoint    = $cp["detections"];
-      $mystats->defense->checkpoint       = $cp["defense"];
-      $mystats->kills->checkpoint         = $cp["kills"];
-      $mystats->damage->checkpoint        = $cp["damage"];
+      $mystats->checkpoint->statsdate     = $cp["statsdate"];
+      $mystats->checkpoint->battles       = $cp["battles"];
+      $mystats->checkpoint->victories     = $cp["victories"];
+      $mystats->checkpoint->detections    = $cp["detections"];
+      $mystats->checkpoint->defense       = $cp["defense"];
+      $mystats->checkpoint->kills         = $cp["kills"];
+      $mystats->checkpoint->damage        = $cp["damage"];
       $weightedBattles = 0;
       $result = $mysqli->query( "select * from wotstats_tanks where statid = {$cp["id"]} " );
       while( $vehicle = $result->fetch_assoc() ) {
@@ -125,38 +125,38 @@
          $tank->winrate = round(( $vehicle["victories"] / $vehicle["battles"] * 100 ), 2 );
          $mystats->checkpoint->tanks[$tank->tankname] = clone $tank;
       }
-      $mystats->weightedBattles->checkpoint = $weightedBattles;
-      $mystats->avgtier->checkpoint       = $mystats->weightedBattles->checkpoint / $mystats->battles->checkpoint;
-      $mystats->winrate->checkpoint       = $mystats->victories->checkpoint / $mystats->battles->checkpoint * 100;
-      $mystats->avgkills->checkpoint      = $mystats->kills->checkpoint / $mystats->battles->checkpoint;
-      $mystats->avgdamage->checkpoint     = $mystats->damage->checkpoint / $mystats->battles->checkpoint;
-      $mystats->avgdetections->checkpoint = $mystats->detections->checkpoint / $mystats->battles->checkpoint;
-      $mystats->avgdefense->checkpoint    = $mystats->defense->checkpoint / $mystats->battles->checkpoint;
-      $mystats->wn7->checkpoint           = calculateWN7( $mystats->battles->checkpoint, $mystats->winrate->checkpoint, $mystats->avgdetections->checkpoint, $mystats->avgdefense->checkpoint, $mystats->avgkills->checkpoint, $mystats->avgdamage->checkpoint, $mystats->avgtier->checkpoint );
+      $mystats->checkpoint->weightedBattles = $weightedBattles;
+      $mystats->checkpoint->avgtier       = $mystats->checkpoint->weightedBattles / $mystats->checkpoint->battles;
+      $mystats->checkpoint->winrate       = $mystats->checkpoint->victories / $mystats->checkpoint->battles * 100;
+      $mystats->checkpoint->avgkills      = $mystats->checkpoint->kills / $mystats->checkpoint->battles;
+      $mystats->checkpoint->avgdamage     = $mystats->checkpoint->damage / $mystats->checkpoint->battles;
+      $mystats->checkpoint->avgdetections = $mystats->checkpoint->detections / $mystats->checkpoint->battles;
+      $mystats->checkpoint->avgdefense    = $mystats->checkpoint->defense / $mystats->checkpoint->battles;
+      $mystats->checkpoint->wn7           = calculateWN7( $mystats->checkpoint->battles, $mystats->checkpoint->winrate, $mystats->checkpoint->avgdetections, $mystats->checkpoint->avgdefense, $mystats->checkpoint->avgkills, $mystats->checkpoint->avgdamage, $mystats->checkpoint->avgtier );
    } else {
-      $mystats->statsdate->checkpoint     = 0;
-      $mystats->battles->checkpoint       = 0;
-      $mystats->victories->checkpoint     = 0;
-      $mystats->detections->checkpoint    = 0;
-      $mystats->defense->checkpoint       = 0;
-      $mystats->kills->checkpoint         = 0;
-      $mystats->damage->checkpoint        = 0;
-      $mystats->avgtier->checkpoint       = 0;
-      $mystats->winrate->checkpoint       = 0;
-      $mystats->avgkills->checkpoint      = 0;
-      $mystats->avgdamage->checkpoint     = 0;
-      $mystats->avgdetections->checkpoint = 0;
-      $mystats->avgdefense->checkpoint    = 0;
-      $mystats->wn7->checkpoint           = 0;
+      $mystats->checkpoint->statsdate     = 0;
+      $mystats->checkpoint->battles       = 0;
+      $mystats->checkpoint->victories     = 0;
+      $mystats->checkpoint->detections    = 0;
+      $mystats->checkpoint->defense       = 0;
+      $mystats->checkpoint->kills         = 0;
+      $mystats->checkpoint->damage        = 0;
+      $mystats->checkpoint->avgtier       = 0;
+      $mystats->checkpoint->winrate       = 0;
+      $mystats->checkpoint->avgkills      = 0;
+      $mystats->checkpoint->avgdamage     = 0;
+      $mystats->checkpoint->avgdetections = 0;
+      $mystats->checkpoint->avgdefense    = 0;
+      $mystats->checkpoint->wn7           = 0;
    }
 
-   if( $mystats->battles->current > $mystats->battles->checkpoint ) {
-      $mystats->battles->interval       = $mystats->battles->current - $mystats->battles->checkpoint;
-      $mystats->victories->interval     = $mystats->victories->current - $mystats->victories->checkpoint;
-      $mystats->detections->interval    = $mystats->detections->current - $mystats->detections->checkpoint;
-      $mystats->defense->interval       = $mystats->defense->current - $mystats->defense->checkpoint;
-      $mystats->kills->interval         = $mystats->kills->current - $mystats->kills->checkpoint;
-      $mystats->damage->interval        = $mystats->damage->current - $mystats->damage->checkpoint;
+   if( $mystats->current->battles > $mystats->checkpoint->battles ) {
+      $mystats->interval->battles       = $mystats->current->battles - $mystats->checkpoint->battles;
+      $mystats->interval->victories     = $mystats->current->victories - $mystats->checkpoint->victories;
+      $mystats->interval->detections    = $mystats->current->detections - $mystats->checkpoint->detections;
+      $mystats->interval->defense       = $mystats->current->defense - $mystats->checkpoint->defense;
+      $mystats->interval->kills         = $mystats->current->kills - $mystats->checkpoint->kills;
+      $mystats->interval->damage        = $mystats->current->damage - $mystats->checkpoint->damage;
       foreach( $mystats->current->tanks as $tankstat ) {
          $tank = new stdClass;
 
@@ -170,45 +170,45 @@
             $mystats->interval->tanks[$tank->tankname] = clone $tank;
          }
       }
-      $mystats->weightedBattles->interval = $mystats->weightedBattles->current - $mystats->weightedBattles->checkpoint;
-      $mystats->avgtier->interval       = round(( $mystats->weightedBattles->interval / $mystats->battles->interval ), 2 );
-      $mystats->winrate->interval       = round(( $mystats->victories->interval / $mystats->battles->interval * 100 ), 2 );
-      $mystats->avgkills->interval      = $mystats->kills->interval / $mystats->battles->interval;
-      $mystats->avgdamage->interval     = $mystats->damage->interval / $mystats->battles->interval;
-      $mystats->avgdetections->interval = $mystats->detections->interval / $mystats->battles->interval;
-      $mystats->avgdefense->interval    = $mystats->defense->interval / $mystats->battles->interval;
-      $mystats->wn7->interval           = calculateWN7( $mystats->battles->interval, $mystats->winrate->interval, $mystats->avgdetections->interval, $mystats->avgdefense->interval, $mystats->avgkills->interval, $mystats->avgdamage->interval, $mystats->avgtier->interval );
+      $mystats->interval->weightedBattles = $mystats->current->weightedBattles - $mystats->checkpoint->weightedBattles;
+      $mystats->interval->avgtier       = round(( $mystats->interval->weightedBattles / $mystats->interval->battles ), 2 );
+      $mystats->interval->winrate       = round(( $mystats->interval->victories / $mystats->interval->battles * 100 ), 2 );
+      $mystats->interval->avgkills      = $mystats->interval->kills / $mystats->interval->battles;
+      $mystats->interval->avgdamage     = $mystats->interval->damage / $mystats->interval->battles;
+      $mystats->interval->avgdetections = $mystats->interval->detections / $mystats->interval->battles;
+      $mystats->interval->avgdefense    = $mystats->interval->defense / $mystats->interval->battles;
+      $mystats->interval->wn7           = calculateWN7( $mystats->interval->battles, $mystats->interval->winrate, $mystats->interval->avgdetections, $mystats->interval->avgdefense, $mystats->interval->avgkills, $mystats->interval->avgdamage, $mystats->interval->avgtier );
 
-      $mystats->winrate->delta = $mystats->winrate->current - $mystats->winrate->checkpoint;
-      $mystats->avgtier->delta = $mystats->avgtier->current - $mystats->avgtier->checkpoint;
-      $mystats->wn7->delta = $mystats->wn7->current - $mystats->wn7->checkpoint;
-      if( $mystats->winrate->delta > 0 ) $color["winrate"] = "green"; else $color["winrate"] = "red";
-      if( $mystats->winrate->delta > 0 ) $token["winrate"] = "+";
-      if( $mystats->avgtier->delta > 0 ) $color["avgtier"] = "green"; else $color["avgtier"] = "red";
-      if( $mystats->avgtier->delta > 0 ) $token["avgtier"] = "+";
-      if( $mystats->wn7->delta > 0 ) $color["wn7"] = "green"; else $color["wn7"] = "red";
-      if( $mystats->wn7->delta > 0 ) $token["wn7"] = "+";
+      $mystats->delta->winrate = $mystats->current->winrate - $mystats->checkpoint->winrate;
+      $mystats->delta->avgtier = $mystats->current->avgtier - $mystats->checkpoint->avgtier;
+      $mystats->delta->wn7 = $mystats->current->wn7 - $mystats->checkpoint->wn7;
+      if( $mystats->delta->winrate > 0 ) $color["winrate"] = "green"; else $color["winrate"] = "red";
+      if( $mystats->delta->winrate > 0 ) $token["winrate"] = "+";
+      if( $mystats->delta->avgtier > 0 ) $color["avgtier"] = "green"; else $color["avgtier"] = "red";
+      if( $mystats->delta->avgtier > 0 ) $token["avgtier"] = "+";
+      if( $mystats->delta->wn7 > 0 ) $color["wn7"] = "green"; else $color["wn7"] = "red";
+      if( $mystats->delta->wn7 > 0 ) $token["wn7"] = "+";
 
    }
 
-   $mystats->winrate->current          = round( $mystats->winrate->current, 2 );
-   $mystats->winrate->checkpoint       = round( $mystats->winrate->checkpoint, 2 );
-   $mystats->winrate->delta            = round( $mystats->winrate->delta, 2 );
-   $mystats->avgtier->current          = round( $mystats->avgtier->current, 2 );
-   $mystats->avgtier->checkpoint       = round( $mystats->avgtier->checkpoint, 2 );
-   $mystats->avgtier->delta            = round( $mystats->avgtier->delta, 2 );
-   $mystats->avgkills->current         = round( $mystats->avgkills->current, 2 );
-   $mystats->avgkills->checkpoint      = round( $mystats->avgkills->checkpoint, 2 );
-   $mystats->avgkills->delta           = round( $mystats->avgkills->delta, 2 );
-   $mystats->avgdamage->current        = round( $mystats->avgdamage->current, 2 );
-   $mystats->avgdamage->checkpoint     = round( $mystats->avgdamage->checkpoint, 2 );
-   $mystats->avgdamage->delta          = round( $mystats->avgdamage->delta, 2 );
-   $mystats->avgdetections->current    = round( $mystats->avgdetections->current, 2 );
-   $mystats->avgdetections->checkpoint = round( $mystats->avgdetections->checkpoint, 2 );
-   $mystats->avgdetections->delta      = round( $mystats->avgdetections->delta, 2 );
-   $mystats->avgdefense->current       = round( $mystats->avgdefense->current, 2 );
-   $mystats->avgdefense->checkpoint    = round( $mystats->avgdefense->checkpoint, 2 );
-   $mystats->avgdefense->delta         = round( $mystats->avgdefense->delta, 2 );
+   $mystats->current->winrate          = round( $mystats->current->winrate, 2 );
+   $mystats->checkpoint->winrate       = round( $mystats->checkpoint->winrate, 2 );
+   $mystats->delta->winrate            = round( $mystats->delta->winrate, 2 );
+   $mystats->current->avgtier          = round( $mystats->current->avgtier, 2 );
+   $mystats->checkpoint->avgtier       = round( $mystats->checkpoint->avgtier, 2 );
+   $mystats->delta->avgtier            = round( $mystats->delta->avgtier, 2 );
+   $mystats->current->avgkills         = round( $mystats->current->avgkills, 2 );
+   $mystats->checkpoint->avgkills      = round( $mystats->checkpoint->avgkills, 2 );
+   $mystats->delta->avgkills           = round( $mystats->delta->avgkills, 2 );
+   $mystats->current->avgdamage        = round( $mystats->current->avgdamage, 2 );
+   $mystats->checkpoint->avgdamage     = round( $mystats->checkpoint->avgdamage, 2 );
+   $mystats->delta->avgdamage          = round( $mystats->delta->avgdamage, 2 );
+   $mystats->current->avgdetections    = round( $mystats->current->avgdetections, 2 );
+   $mystats->checkpoint->avgdetections = round( $mystats->checkpoint->avgdetections, 2 );
+   $mystats->delta->avgdetections      = round( $mystats->delta->avgdetections, 2 );
+   $mystats->current->avgdefense       = round( $mystats->current->avgdefense, 2 );
+   $mystats->checkpoint->avgdefense    = round( $mystats->checkpoint->avgdefense, 2 );
+   $mystats->delta->avgdefense         = round( $mystats->delta->avgdefense, 2 );
 
    if( $hitApi ) {
       $apiMsg = "updated from webservice";
@@ -223,7 +223,7 @@
    asort( $tankSort );
    $tankSort = array_reverse( $tankSort );
 
-   $properDatestamp = date( "Y-m-d H:i", $mystats->statsdate->current );
+   $properDatestamp = date( "Y-m-d H:i", $mystats->current->statsdate );
    echo <<<EOE
 <span>Stats as of {$properDatestamp} EDT <font size=-2>({$apiMsg})</font></span>
 
@@ -238,51 +238,51 @@
    </thead>
    <tr>
       <td><b>Battles Played / <font size=-1><b>Won</b></font></b></td>
-      <td>{$mystats->battles->checkpoint} / <font size=-1>{$mystats->victories->checkpoint}</font></td>
-      <td>{$mystats->battles->current} / <font size=-1>{$mystats->victories->current}</font></td>
-      <td>{$mystats->battles->interval} / <font size=-1>{$mystats->victories->interval}</font></td>
+      <td>{$mystats->checkpoint->battles} / <font size=-1>{$mystats->checkpoint->victories}</font></td>
+      <td>{$mystats->current->battles} / <font size=-1>{$mystats->current->victories}</font></td>
+      <td>{$mystats->interval->battles} / <font size=-1>{$mystats->interval->victories}</font></td>
    </tr>
    <tr>
       <td><b>Win Rate</b></td>
-      <td>{$mystats->winrate->checkpoint}%</td>
-      <td>{$mystats->winrate->current}%</td>
-      <td>{$mystats->winrate->interval}% <font size=-1 color={$color["winrate"]}>({$token["winrate"]}{$mystats->winrate->delta}%)</font></td>
+      <td>{$mystats->checkpoint->winrate}%</td>
+      <td>{$mystats->current->winrate}%</td>
+      <td>{$mystats->interval->winrate}% <font size=-1 color={$color["winrate"]}>({$token["winrate"]}{$mystats->delta->winrate}%)</font></td>
    </tr>
    <tr>
       <td><b>Enemies Spotted</b></td>
-      <td>{$mystats->detections->checkpoint}</td>
-      <td>{$mystats->detections->current}</td>
-      <td>{$mystats->detections->interval}</td>
+      <td>{$mystats->checkpoint->detections}</td>
+      <td>{$mystats->current->detections}</td>
+      <td>{$mystats->interval->detections}</td>
    </tr>
    <tr>
       <td><b>Enemies Killed / <font size=-1><b>Avg.</b></font></b></td>
-      <td>{$mystats->kills->checkpoint} / <font size=-1>{$mystats->avgkills->checkpoint}</font></td>
-      <td>{$mystats->kills->current} / <font size=-1>{$mystats->avgkills->current}</font></td>
-      <td>{$mystats->kills->interval} / <font size=-1>{$mystats->avgkills->interval}</font></td>
+      <td>{$mystats->checkpoint->kills} / <font size=-1>{$mystats->checkpoint->avgkills}</font></td>
+      <td>{$mystats->current->kills} / <font size=-1>{$mystats->current->avgkills}</font></td>
+      <td>{$mystats->interval->kills} / <font size=-1>{$mystats->interval->avgkills}</font></td>
    </tr>
    <tr>
       <td><b>Average Defense</b></td>
-      <td>{$mystats->avgdefense->checkpoint}</td>
-      <td>{$mystats->avgdefense->current}</td>
-      <td>{$mystats->avgdefense->interval}</td>
+      <td>{$mystats->checkpoint->avgdefense}</td>
+      <td>{$mystats->current->avgdefense}</td>
+      <td>{$mystats->interval->avgdefense}</td>
    </tr>
    <tr>
       <td><b>Average Damage</b></td>
-      <td>{$mystats->avgdamage->checkpoint}</td>
-      <td>{$mystats->avgdamage->current}</td>
-      <td>{$mystats->avgdamage->interval}</td>
+      <td>{$mystats->checkpoint->avgdamage}</td>
+      <td>{$mystats->current->avgdamage}</td>
+      <td>{$mystats->interval->avgdamage}</td>
    </tr>
    <tr>
       <td><b>Average Tier</b></td>
-      <td>{$mystats->avgtier->checkpoint}</td>
-      <td>{$mystats->avgtier->current}</td>
-      <td>{$mystats->avgtier->interval} <font size=-1 color={$color["avgtier"]}>({$token["avgtier"]}{$mystats->avgtier->delta})</font></td>
+      <td>{$mystats->checkpoint->avgtier}</td>
+      <td>{$mystats->current->avgtier}</td>
+      <td>{$mystats->interval->avgtier} <font size=-1 color={$color["avgtier"]}>({$token["avgtier"]}{$mystats->delta->avgtier})</font></td>
    </tr>
    <tr>
       <td><b>WN7 Rating</b></td>
-      <td>{$mystats->wn7->checkpoint}</td>
-      <td>{$mystats->wn7->current}</td>
-      <td>{$mystats->wn7->interval} <font size=-1 color={$color["wn7"]}>({$token["wn7"]}{$mystats->wn7->delta})</font></td>
+      <td>{$mystats->checkpoint->wn7}</td>
+      <td>{$mystats->current->wn7}</td>
+      <td>{$mystats->interval->wn7} <font size=-1 color={$color["wn7"]}>({$token["wn7"]}{$mystats->delta->wn7})</font></td>
    </tr>
 </table>
 
