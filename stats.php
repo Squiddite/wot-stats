@@ -193,21 +193,27 @@
 
    $mystats->current->winrate          = round( $mystats->current->winrate, 2 );
    $mystats->checkpoint->winrate       = round( $mystats->checkpoint->winrate, 2 );
+   $mystats->interval->winrate            = round( $mystats->interval->winrate, 2 );
    $mystats->delta->winrate            = round( $mystats->delta->winrate, 2 );
    $mystats->current->avgtier          = round( $mystats->current->avgtier, 2 );
    $mystats->checkpoint->avgtier       = round( $mystats->checkpoint->avgtier, 2 );
+   $mystats->interval->avgtier            = round( $mystats->interval->avgtier, 2 );
    $mystats->delta->avgtier            = round( $mystats->delta->avgtier, 2 );
    $mystats->current->avgkills         = round( $mystats->current->avgkills, 2 );
    $mystats->checkpoint->avgkills      = round( $mystats->checkpoint->avgkills, 2 );
+   $mystats->interval->avgkills           = round( $mystats->interval->avgkills, 2 );
    $mystats->delta->avgkills           = round( $mystats->delta->avgkills, 2 );
    $mystats->current->avgdamage        = round( $mystats->current->avgdamage, 2 );
    $mystats->checkpoint->avgdamage     = round( $mystats->checkpoint->avgdamage, 2 );
+   $mystats->interval->avgdamage          = round( $mystats->interval->avgdamage, 2 );
    $mystats->delta->avgdamage          = round( $mystats->delta->avgdamage, 2 );
    $mystats->current->avgdetections    = round( $mystats->current->avgdetections, 2 );
    $mystats->checkpoint->avgdetections = round( $mystats->checkpoint->avgdetections, 2 );
+   $mystats->interval->avgdetections      = round( $mystats->interval->avgdetections, 2 );
    $mystats->delta->avgdetections      = round( $mystats->delta->avgdetections, 2 );
    $mystats->current->avgdefense       = round( $mystats->current->avgdefense, 2 );
    $mystats->checkpoint->avgdefense    = round( $mystats->checkpoint->avgdefense, 2 );
+   $mystats->interval->avgdefense         = round( $mystats->interval->avgdefense, 2 );
    $mystats->delta->avgdefense         = round( $mystats->delta->avgdefense, 2 );
 
    if( $hitApi ) {
