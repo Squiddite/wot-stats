@@ -246,7 +246,7 @@
       <td></td>
       <td><b>Checkpoint</b></td>
       <td><b>Current</b></td>
-      <td><b>Interval</b></td>
+      <td><b>Today</b></td>
    </tr>
    </thead>
    <tr>
@@ -302,11 +302,15 @@
 <div>
 EOE;
 
-if( $mystats->current->battles > $mystats->checkpoint->battles ) {
+   // stat-padding improvements section
+   if( $mystats->current->battles > $mystats->checkpoint->battles ) {
+      $subMessage = "using today's stats";
+   } else {
+      $subMessage = "using your lifetime stats";
+   }
    echo <<<EOE
-
 <div>
-<span>Suggestions for improvement: <br /></span>
+<span>Suggestions for improvement: <font size=-2>({$subMessage})</font><br /></span>
 <table border=0 cellpadding=3 cellspacing=0>
    <thead>
    <tr bgcolor=e2e2e2>
@@ -323,8 +327,13 @@ EOE;
       $category = $statHint[0];
       $suggestion = $statHint[1];
 
-      $improvementAmt = $improvement - $mystats->interval->wn7;
-      $improvementPct = round(( $improvement / $mystats->interval->wn7 ), 2 );
+      if( $mystats->current->battles > $mystats->checkpoint->battles ) {
+         $improvementAmt = $improvement - $mystats->interval->wn7;
+         $improvementPct = round(( $improvement / $mystats->interval->wn7 ), 2 );
+      } else {
+         $improvementAmt = $improvement - $mystats->checkpoint->wn7;
+         $improvementPct = round(( $improvement / $mystats->checkpoint->wn7 ), 2 );
+      }
       if( $improvementAmt > 0 ) $token = "+"; else $token = "-";
       if( $improvementAmt > 0 ) $color = "green"; else $color = "red";
       echo <<<EOE
@@ -336,6 +345,9 @@ EOE;
    </tr>
 EOE;
    }
+
+if( $mystats->current->battles > $mystats->checkpoint->battles ) {
+   // today's tanks section
    echo <<<EOE
 </table>
 </div>
