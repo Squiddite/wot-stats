@@ -196,7 +196,13 @@
       $statImprovements = improveWN7( $mystats->interval->battles, $mystats->interval->winrate, $mystats->interval->avgdetections, $mystats->interval->avgdefense, $mystats->interval->avgkills, $mystats->interval->avgdamage, $mystats->interval->avgtier );
       asort( $statImprovements );
       $statImprovements = array_reverse( $statImprovements );
+   } else {
+      $statImprovements = improveWN7( $mystats->current->battles, $mystats->current->winrate, $mystats->current->avgdetections, $mystats->current->avgdefense, $mystats->current->avgkills, $mystats->current->avgdamage, $mystats->current->avgtier );
+      asort( $statImprovements );
+      $statImprovements = array_reverse( $statImprovements );
+
    }
+
 
    $mystats->current->winrate          = round( $mystats->current->winrate, 2 );
    $mystats->checkpoint->winrate       = round( $mystats->checkpoint->winrate, 2 );
@@ -232,7 +238,7 @@
 
    $properDatestamp = date( "Y-m-d H:i", $mystats->current->statsdate );
    echo <<<EOE
-<span>Stats as of {$properDatestamp} EDT <font size=-2>({$apiMsg})</font></span>
+<span>Stats as of {$properDatestamp} EDT: <font size=-2>({$apiMsg})</font></span>
 
 <table border=0 cellpadding=3 cellspacing=0>
    <thead>
@@ -292,37 +298,12 @@
       <td>{$mystats->interval->wn7} <font size=-1 color={$color["wn7"]}>({$token["wn7"]}{$mystats->delta->wn7})</font></td>
    </tr>
 </table>
-
 <br /><br />
 <div>
-
-<table border=0 cellpadding=3 cellspacing=0>
-   <thead>
-   <tr bgcolor=e2e2e2>
-      <td><b>Tanks Played<b/></td>
-      <td><b>Battles</b></td>
-      <td><b>Victories</b></td>
-      <td><b>Winrate</b></td>
-   </tr>
-   </thead>
 EOE;
 
 if( $mystats->current->battles > $mystats->checkpoint->battles ) {
-   foreach( $tankSort as $tankname => $battles ) {
-      echo <<<EOE
-   <tr>
-      <td><b>{$mystats->interval->tanks[$tankname]->tankname}</b></td>
-      <td>{$mystats->interval->tanks[$tankname]->battles}</td>
-      <td>{$mystats->interval->tanks[$tankname]->victories}</td>
-      <td>{$mystats->interval->tanks[$tankname]->winrate}%</td>
-   </tr>
-
-EOE;
-   }
    echo <<<EOE
-</table>
-</div>
-<br /><br />
 
 <div>
 <span>Suggestions for improvement: <br /></span>
@@ -338,48 +319,9 @@ EOE;
 
 EOE;
    foreach( $statImprovements as $type => $improvement ) {
-      switch( $type ) {
-       case "winrate":
-         $category = "Winrate";
-         $suggestion = "Improve your winrate by 10%";
-         break;
-       case "winrate2":
-         $category = "Winrate";
-         $suggestion = "Win at least half your matches";
-         break;
-       case "kills":
-         $category = "Kills";
-         $suggestion = "Score 10% more kills";
-         break;
-       case "kills2":
-         $category = "Kills";
-         $suggestion = "Average 1.5 kills per battle";
-         break;
-       case "detections":
-         $category = "Scouting";
-         $suggestion = "Spot 10% more enemy tanks";
-         break;
-       case "detections2":
-         $category = "Scouting";
-         $suggestion = "Detect at least 1.25 tanks per battle";
-         break;
-       case "defense":
-         $category = "Defense";
-         $suggestion = "Farm 10% more defender points";
-         break;
-       case "defense2":
-         $category = "Defense";
-         $suggestion = "Reset at least 1 point per battle";
-         break;
-       case "damage":
-         $category = "Damage";
-         $suggestion = "Do 10% more damage";
-         break;
-       case "damage2":
-         $category = "Damage";
-         $suggestion = "Average at least 1250 damage";
-         break;
-      }
+      $statHint = getStatImprovementHint( $type );
+      $category = $statHint[0];
+      $suggestion = $statHint[1];
 
       $improvementAmt = $improvement - $mystats->interval->wn7;
       $improvementPct = round(( $improvement / $mystats->interval->wn7 ), 2 );
@@ -394,7 +336,39 @@ EOE;
    </tr>
 EOE;
    }
-echo "</table></div><br /><br />\r\n";
+   echo <<<EOE
+</table>
+</div>
+<br /><br />
+
+<div>
+<span>Today's tanks:</span>
+<table border=0 cellpadding=3 cellspacing=0>
+   <thead>
+   <tr bgcolor=e2e2e2>
+      <td><b>Tanks Played<b/></td>
+      <td><b>Battles</b></td>
+      <td><b>Victories</b></td>
+      <td><b>Winrate</b></td>
+   </tr>
+   </thead>
+EOE;
+   foreach( $tankSort as $tankname => $battles ) {
+      echo <<<EOE
+   <tr>
+      <td><b>{$mystats->interval->tanks[$tankname]->tankname}</b></td>
+      <td>{$mystats->interval->tanks[$tankname]->battles}</td>
+      <td>{$mystats->interval->tanks[$tankname]->victories}</td>
+      <td>{$mystats->interval->tanks[$tankname]->winrate}%</td>
+   </tr>
+
+EOE;
+   }
+   echo <<<EOE
+</table>
+</div>
+<br /><br />
+EOE;
 }
 
 function calculateWN7( $battles, $winrate, $detections, $defense, $kills, $damage, $averagetier ) {
@@ -445,6 +419,52 @@ function improveWN7( $battles, $winrate, $detections, $defense, $kills, $damage,
    if( $impDamage1 > $impDamage2 ) $statArr["damage"] = $impDamage1; else $statArr["damage2"] = $impDamage2;
 
    return $statArr;
+}
+function getStatImprovementHint( $type ) {
+   switch( $type ) {
+    case "winrate":
+      $category = "Winrate";
+      $suggestion = "Improve your winrate by 10%";
+      break;
+    case "winrate2":
+      $category = "Winrate";
+      $suggestion = "Win at least half your matches";
+      break;
+    case "kills":
+      $category = "Kills";
+      $suggestion = "Score 10% more kills";
+      break;
+    case "kills2":
+      $category = "Kills";
+      $suggestion = "Average 1.5 kills per battle";
+      break;
+    case "detections":
+      $category = "Scouting";
+      $suggestion = "Spot 10% more enemy tanks";
+    break;
+      case "detections2":
+      $category = "Scouting";
+      $suggestion = "Detect at least 1.25 tanks per battle";
+      break;
+    case "defense":
+      $category = "Defense";
+      $suggestion = "Farm 10% more defender points";
+      break;
+    case "defense2":
+      $category = "Defense";
+      $suggestion = "Reset at least 1 point per battle";
+      break;
+    case "damage":
+      $category = "Damage";
+      $suggestion = "Do 10% more damage";
+      break;
+    case "damage2":
+      $category = "Damage";
+      $suggestion = "Average at least 1250 damage";
+      break;
+   }
+   return array( $category, $suggestion );
+
 }
 ?>
 
