@@ -262,13 +262,13 @@
       <td>{$mystats->interval->winrate}% <font size=-1 color={$color["winrate"]}>({$token["winrate"]}{$mystats->delta->winrate}%)</font></td>
    </tr>
    <tr>
-      <td><b>Enemies Spotted</b></td>
-      <td>{$mystats->checkpoint->detections}</td>
-      <td>{$mystats->current->detections}</td>
-      <td>{$mystats->interval->detections}</td>
+      <td><b>Enemies Spotted / <font size=-1>Avg.</font></b></td>
+      <td>{$mystats->checkpoint->detections} / <font size=-1>{$mystats->checkpoint->avgdetections}</font></td>
+      <td>{$mystats->current->detections} / <font size=-1>{$mystats->current->avgdetections}</font></td>
+      <td>{$mystats->interval->detections} / <font size=-1>{$mystats->interval->avgdetections}</font></td>
    </tr>
    <tr>
-      <td><b>Enemies Killed / <font size=-1><b>Avg.</b></font></b></td>
+      <td><b>Enemies Killed / <font size=-1>Avg.</font></b></td>
       <td>{$mystats->checkpoint->kills} / <font size=-1>{$mystats->checkpoint->avgkills}</font></td>
       <td>{$mystats->current->kills} / <font size=-1>{$mystats->current->avgkills}</font></td>
       <td>{$mystats->interval->kills} / <font size=-1>{$mystats->interval->avgkills}</font></td>
