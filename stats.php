@@ -6,9 +6,12 @@
    $currentTime = time();
    $playerId = (int) $_REQUEST["id"];
    $debug = false;
-   $setCheckpoint = false;
    if( isset( $_REQUEST["debug"] )) $debug = true;
-   if( isset( $_REQUEST["checkpoint"] )) $setCheckpoint = true;
+   if( isset( $_REQUEST["checkpoint"] )) {
+      if( $_REQUEST["checkpoint"] == 1 ) $forceCheckpoint = true;
+   } else {
+      if( $_REQUEST["checkpoint"] == 0 ) $forceCheckpoint = true;
+   }
    $mystats = new stdClass;
 
    $sql = "select if( exists( select 1 from wotstats where playerid = {$playerId} ), ( select cachedate from wotstats where playerid = {$playerId} order by cachedate desc limit 1 ), ( select 0 )) as cachedate";
@@ -47,6 +50,7 @@
 
       $checkpoint = 0;
       if(( $currentTime - $statsObject->data->updated_at ) >= 21600 ) $checkpoint = 1;
+      if( isset( $forceCheckpoint )) if( $forceCheckpoint == true ) $checkpoint = 1; else if( $forceCheckpoint == false ) $checkpoint = 0;
       $sql = "insert into wotstats ( playerid, cachedate, statsdate, battles, victories, detections, defense, kills, damage, checkpoint ) values ( {$playerId}, '{$currentTime}', '{$mystats->current->statsdate}', {$mystats->current->battles}, {$mystats->current->victories}, {$mystats->current->detections}, {$mystats->current->defense}, {$mystats->current->kills}, {$mystats->current->damage}, {$checkpoint} )";
       $mysqli->query( $sql );
       $newStatId = $mysqli->insert_id;
