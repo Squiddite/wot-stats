@@ -11,6 +11,7 @@ create table if not exists wotstats (
    damage         int,
    checkpoint     bit not null default 0
 );
+alter table wotstats add column region varchar(2) default 'us' after playerid;
 
 create table if not exists wotstats_tanks (
    statid         int not null,
