@@ -297,9 +297,9 @@
    </tr>
    <tr>
       <td><b>WN7 Rating</b></td>
-      <td>{$mystats->checkpoint->wn7}</td>
-      <td>{$mystats->current->wn7}</td>
-      <td>{$mystats->interval->wn7} <font size=-1 color={$color["wn7"]}>({$token["wn7"]}{$mystats->delta->wn7})</font></td>
+      <td bgcolor=e2e2e2>{$mystats->checkpoint->wn7}</td>
+      <td bgcolor=e2e2e2>{$mystats->current->wn7}</td>
+      <td bgcolor=e2e2e2>{$mystats->interval->wn7} <font size=-1 color={$color["wn7"]}>({$token["wn7"]}{$mystats->delta->wn7})</font></td>
    </tr>
 </table>
 <br /><br />
@@ -320,8 +320,7 @@ EOE;
    <tr bgcolor=e2e2e2>
       <td><b>Category<b/></td>
       <td><b>Suggestion<b/></td>
-      <td><b>WN7</b></td>
-      <td><b>Increase</b></td>
+      <td><b>New WN7</b></td>
    </tr>
    </thead>
 
@@ -344,8 +343,7 @@ EOE;
    <tr>
       <td><b>{$category}</b></td>
       <td>{$suggestion}</td>
-      <td>{$improvement}</td>
-      <td>{$improvementAmt} <font size=-1 color={$color}>({$token}{$improvementPct}%)</font></td>
+      <td>{$improvement} <font size=-1 color={$color}>({$token}{$improvementAmt})</font></td>
    </tr>
 EOE;
    }
