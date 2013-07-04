@@ -8,9 +8,7 @@
    $debug = false;
    if( isset( $_REQUEST["debug"] )) $debug = true;
    if( isset( $_REQUEST["checkpoint"] )) {
-      if( $_REQUEST["checkpoint"] == 1 ) $forceCheckpoint = true;
-   } else {
-      if( $_REQUEST["checkpoint"] == 0 ) $forceCheckpoint = true;
+      if( $_REQUEST["checkpoint"] == 1 ) $forceCheckpoint = true; else $forceCheckpoint = false;
    }
    $mystats = new stdClass;
 
@@ -50,7 +48,9 @@
 
       $checkpoint = 0;
       if(( $currentTime - $statsObject->data->updated_at ) >= 21600 ) $checkpoint = 1;
-      if( isset( $forceCheckpoint )) if( $forceCheckpoint == true ) $checkpoint = 1; else if( $forceCheckpoint == false ) $checkpoint = 0;
+      if( !is_null( $forceCheckpoint )) {
+         if( $forceCheckpoint == true ) $checkpoint = 1; else $checkpoint = 0;
+      }
       $sql = "insert into wotstats ( playerid, cachedate, statsdate, battles, victories, detections, defense, kills, damage, checkpoint ) values ( {$playerId}, '{$currentTime}', '{$mystats->current->statsdate}', {$mystats->current->battles}, {$mystats->current->victories}, {$mystats->current->detections}, {$mystats->current->defense}, {$mystats->current->kills}, {$mystats->current->damage}, {$checkpoint} )";
       $mysqli->query( $sql );
       $newStatId = $mysqli->insert_id;
@@ -196,17 +196,15 @@
       foreach( $mystats->interval->tanks as $tankname => $vehicle ) $tankSort[$tankname] = $vehicle->battles;
       asort( $tankSort );
       $tankSort = array_reverse( $tankSort );
-
-      $statImprovements = improveWN7( $mystats->interval->battles, $mystats->interval->winrate, $mystats->interval->avgdetections, $mystats->interval->avgdefense, $mystats->interval->avgkills, $mystats->interval->avgdamage, $mystats->interval->avgtier );
-      asort( $statImprovements );
-      $statImprovements = array_reverse( $statImprovements );
-   } else {
-      $statImprovements = improveWN7( $mystats->current->battles, $mystats->current->winrate, $mystats->current->avgdetections, $mystats->current->avgdefense, $mystats->current->avgkills, $mystats->current->avgdamage, $mystats->current->avgtier );
-      asort( $statImprovements );
-      $statImprovements = array_reverse( $statImprovements );
-
    }
 
+   if( $mystats->current->battles > $mystats->checkpoint->battles ) {
+      $statImprovements = improveWN7( $mystats->interval->battles, $mystats->interval->winrate, $mystats->interval->avgdetections, $mystats->interval->avgdefense, $mystats->interval->avgkills, $mystats->interval->avgdamage, $mystats->interval->avgtier );
+   } else {
+      $statImprovements = improveWN7( $mystats->current->battles, $mystats->current->winrate, $mystats->current->avgdetections, $mystats->current->avgdefense, $mystats->current->avgkills, $mystats->current->avgdamage, $mystats->current->avgtier );
+   }
+   asort( $statImprovements );
+   $statImprovements = array_reverse( $statImprovements );
 
    $mystats->current->winrate          = round( $mystats->current->winrate, 2 );
    $mystats->checkpoint->winrate       = round( $mystats->checkpoint->winrate, 2 );
