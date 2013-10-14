@@ -1,0 +1,3302 @@
+{
+  "Renault NC-31": {
+    "nation": "CH",
+    "tier": 1,
+    "type": "LT",
+    "damage": 269,
+    "winrate": 0.61,
+    "detections": 1.61,
+    "kills": 2.04,
+    "defense": 2.11
+  },
+  "Vickers Mk. E Type B": {
+    "nation": "CH",
+    "tier": 2,
+    "type": "LT",
+    "damage": 306,
+    "winrate": 0.62,
+    "detections": 1.66,
+    "kills": 1.82,
+    "defense": 1.87
+  },
+  "Type 2597 Chi-Ha": {
+    "nation": "CH",
+    "tier": 3,
+    "type": "LT",
+    "damage": 407,
+    "winrate": 0.61,
+    "detections": 1.51,
+    "kills": 1.68,
+    "defense": 1.89
+  },
+  "M5A1 Stuart": {
+    "nation": "CH",
+    "tier": 4,
+    "type": "LT",
+    "damage": 373,
+    "winrate": 0.57,
+    "detections": 2.75,
+    "kills": 1.08,
+    "defense": 1.18
+  },
+  "Type T-34": {
+    "nation": "CH",
+    "tier": 5,
+    "type": "MT",
+    "damage": 551,
+    "winrate": 0.55,
+    "detections": 1.52,
+    "kills": 1.22,
+    "defense": 1.37
+  },
+  "59-16": {
+    "nation": "CH",
+    "tier": 6,
+    "type": "LT",
+    "damage": 380,
+    "winrate": 0.52,
+    "detections": 2.87,
+    "kills": 0.59,
+    "defense": 0.82
+  },
+  "Type 58": {
+    "nation": "CH",
+    "tier": 6,
+    "type": "MT",
+    "damage": 764,
+    "winrate": 0.55,
+    "detections": 1.63,
+    "kills": 1.12,
+    "defense": 1.35
+  },
+  "IS-2": {
+    "nation": "CH",
+    "tier": 7,
+    "type": "HT",
+    "damage": 1183,
+    "winrate": 0.55,
+    "detections": 1.16,
+    "kills": 1.11,
+    "defense": 0.97
+  },
+  "Type-62": {
+    "nation": "CH",
+    "tier": 7,
+    "type": "LT",
+    "damage": 629,
+    "winrate": 0.52,
+    "detections": 2.44,
+    "kills": 0.66,
+    "defense": 0.83
+  },
+  "WZ-131": {
+    "nation": "CH",
+    "tier": 7,
+    "type": "LT",
+    "damage": 695,
+    "winrate": 0.52,
+    "detections": 2.69,
+    "kills": 0.68,
+    "defense": 0.84
+  },
+  "T-34-1": {
+    "nation": "CH",
+    "tier": 7,
+    "type": "MT",
+    "damage": 1035,
+    "winrate": 0.55,
+    "detections": 1.64,
+    "kills": 1.06,
+    "defense": 1.19
+  },
+  "WZ-111": {
+    "nation": "CH",
+    "tier": 8,
+    "type": "HT",
+    "damage": null,
+    "winrate": null,
+    "detections": null,
+    "kills": null,
+    "defense": null
+  },
+  "110": {
+    "nation": "CH",
+    "tier": 8,
+    "type": "HT",
+    "damage": 1400,
+    "winrate": 0.54,
+    "detections": 1.19,
+    "kills": 0.98,
+    "defense": 0.98
+  },
+  "112": {
+    "nation": "CH",
+    "tier": 8,
+    "type": "HT",
+    "damage": 1413,
+    "winrate": 0.53,
+    "detections": 1.14,
+    "kills": 1.1,
+    "defense": 0.94
+  },
+  "WZ-132": {
+    "nation": "CH",
+    "tier": 8,
+    "type": "LT",
+    "damage": 816,
+    "winrate": 0.52,
+    "detections": 2.96,
+    "kills": 0.69,
+    "defense": 0.75
+  },
+  "Type 59 G": {
+    "nation": "CH",
+    "tier": 8,
+    "type": "MT",
+    "damage": null,
+    "winrate": null,
+    "detections": null,
+    "kills": null,
+    "defense": null
+  },
+  "T-34-2": {
+    "nation": "CH",
+    "tier": 8,
+    "type": "MT",
+    "damage": 1122,
+    "winrate": 0.52,
+    "detections": 1.72,
+    "kills": 0.92,
+    "defense": 0.89
+  },
+  "T-34-3": {
+    "nation": "CH",
+    "tier": 8,
+    "type": "MT",
+    "damage": 1122,
+    "winrate": 0.52,
+    "detections": 1.72,
+    "kills": 0.92,
+    "defense": 0.89
+  },
+  "Type 59": {
+    "nation": "CH",
+    "tier": 8,
+    "type": "MT",
+    "damage": 1093,
+    "winrate": 0.52,
+    "detections": 1.72,
+    "kills": 0.95,
+    "defense": 0.99
+  },
+  "WZ-111 model 1-4": {
+    "nation": "CH",
+    "tier": 9,
+    "type": "HT",
+    "damage": 1654,
+    "winrate": 0.51,
+    "detections": 1.36,
+    "kills": 0.95,
+    "defense": 0.62
+  },
+  "WZ-120": {
+    "nation": "CH",
+    "tier": 9,
+    "type": "MT",
+    "damage": 1553,
+    "winrate": 0.52,
+    "detections": 1.68,
+    "kills": 1,
+    "defense": 0.85
+  },
+  "113": {
+    "nation": "CH",
+    "tier": 10,
+    "type": "HT",
+    "damage": 1783,
+    "winrate": 0.46,
+    "detections": 1.29,
+    "kills": 0.86,
+    "defense": 0.62
+  },
+  "121": {
+    "nation": "CH",
+    "tier": 10,
+    "type": "MT",
+    "damage": 1734,
+    "winrate": 0.50,
+    "detections": 1.51,
+    "kills": 0.97,
+    "defense": 0.77
+  },
+  "Leichttraktor": {
+    "nation": "DE",
+    "tier": 1,
+    "type": "LT",
+    "damage": 270,
+    "winrate": 0.61,
+    "detections": 2.31,
+    "kills": 2.05,
+    "defense": 1.79
+  },
+  "Pz.Kpfw. 35 (t)": {
+    "nation": "DE",
+    "tier": 2,
+    "type": "LT",
+    "damage": 287,
+    "winrate": 0.60,
+    "detections": 1.84,
+    "kills": 1.79,
+    "defense": 1.99
+  },
+  "Pz.Kpfw. 38H 735 (f)": {
+    "nation": "DE",
+    "tier": 2,
+    "type": "LT",
+    "damage": 380,
+    "winrate": 0.61,
+    "detections": 2.06,
+    "kills": 2.41,
+    "defense": 3.17
+  },
+  "Pz.Kpfw. I": {
+    "nation": "DE",
+    "tier": 2,
+    "type": "LT",
+    "damage": 236,
+    "winrate": 0.60,
+    "detections": 3.05,
+    "kills": 1.52,
+    "defense": 1.46
+  },
+  "Pz.Kpfw. II": {
+    "nation": "DE",
+    "tier": 2,
+    "type": "LT",
+    "damage": 249,
+    "winrate": 0.59,
+    "detections": 1.97,
+    "kills": 1.53,
+    "defense": 1.65
+  },
+  "GPz Mk VI (e)": {
+    "nation": "DE",
+    "tier": 2,
+    "type": "SPG",
+    "damage": 240,
+    "winrate": 0.53,
+    "detections": 0.16,
+    "kills": 1.28,
+    "defense": 1.86
+  },
+  "Panzerjäger I": {
+    "nation": "DE",
+    "tier": 2,
+    "type": "TD",
+    "damage": 318,
+    "winrate": 0.60,
+    "detections": 0.91,
+    "kills": 1.88,
+    "defense": 1.68
+  },
+  "Pz.Kpfw. 38 (t)": {
+    "nation": "DE",
+    "tier": 3,
+    "type": "LT",
+    "damage": 349,
+    "winrate": 0.60,
+    "detections": 1.54,
+    "kills": 1.52,
+    "defense": 1.64
+  },
+  "Pz.Kpfw. I Ausf. C": {
+    "nation": "DE",
+    "tier": 3,
+    "type": "LT",
+    "damage": 272,
+    "winrate": 0.59,
+    "detections": 3.08,
+    "kills": 1.28,
+    "defense": 1.43
+  },
+  "Pz.Kpfw. II Ausf. G": {
+    "nation": "DE",
+    "tier": 3,
+    "type": "LT",
+    "damage": 279,
+    "winrate": 0.60,
+    "detections": 1.99,
+    "kills": 1.11,
+    "defense": 1.73
+  },
+  "Pz.Kpfw. II Ausf. J": {
+    "nation": "DE",
+    "tier": 3,
+    "type": "LT",
+    "damage": 340,
+    "winrate": 0.64,
+    "detections": 2.02,
+    "kills": 1.86,
+    "defense": 2.88
+  },
+  "Pz.Kpfw. III Ausf. A": {
+    "nation": "DE",
+    "tier": 3,
+    "type": "LT",
+    "damage": 223,
+    "winrate": 0.53,
+    "detections": 1.8,
+    "kills": 0.98,
+    "defense": 1.15
+  },
+  "T-15": {
+    "nation": "DE",
+    "tier": 3,
+    "type": "LT",
+    "damage": 277,
+    "winrate": 0.62,
+    "detections": 3.73,
+    "kills": 1.2,
+    "defense": 1.56
+  },
+  "Pz.Kpfw. S35 739 (f)": {
+    "nation": "DE",
+    "tier": 3,
+    "type": "MT",
+    "damage": 438,
+    "winrate": 0.65,
+    "detections": 1.64,
+    "kills": 1.96,
+    "defense": 1.98
+  },
+  "Sturmpanzer I Bison": {
+    "nation": "DE",
+    "tier": 3,
+    "type": "SPG",
+    "damage": 379,
+    "winrate": 0.52,
+    "detections": 0.22,
+    "kills": 1.32,
+    "defense": 1.65
+  },
+  "Wespe": {
+    "nation": "DE",
+    "tier": 3,
+    "type": "SPG",
+    "damage": 399,
+    "winrate": 0.52,
+    "detections": 0.17,
+    "kills": 1.12,
+    "defense": 1.82
+  },
+  "Marder II": {
+    "nation": "DE",
+    "tier": 3,
+    "type": "TD",
+    "damage": 416,
+    "winrate": 0.60,
+    "detections": 1.08,
+    "kills": 1.47,
+    "defense": 1.48
+  },
+  "Durchbruchswagen 2": {
+    "nation": "DE",
+    "tier": 4,
+    "type": "HT",
+    "damage": 322,
+    "winrate": 0.52,
+    "detections": 1.17,
+    "kills": 1.07,
+    "defense": 1.37
+  },
+  "Pz.Kpfw. B2 740 (f)": {
+    "nation": "DE",
+    "tier": 4,
+    "type": "HT",
+    "damage": 508,
+    "winrate": 0.61,
+    "detections": 1.76,
+    "kills": 1.89,
+    "defense": 2.11
+  },
+  "Pz.Kpfw. 38 (t) n.A.": {
+    "nation": "DE",
+    "tier": 4,
+    "type": "LT",
+    "damage": 184,
+    "winrate": 0.52,
+    "detections": 2.28,
+    "kills": 0.56,
+    "defense": 0.64
+  },
+  "Pz.Kpfw. II Luchs": {
+    "nation": "DE",
+    "tier": 4,
+    "type": "LT",
+    "damage": 286,
+    "winrate": 0.58,
+    "detections": 2.69,
+    "kills": 1.14,
+    "defense": 1.02
+  },
+  "Pz.Kpfw. III": {
+    "nation": "DE",
+    "tier": 4,
+    "type": "MT",
+    "damage": 248,
+    "winrate": 0.54,
+    "detections": 1.98,
+    "kills": 0.81,
+    "defense": 0.7
+  },
+  "VK 20.01 (D)": {
+    "nation": "DE",
+    "tier": 4,
+    "type": "MT",
+    "damage": 413,
+    "winrate": 0.59,
+    "detections": 1.8,
+    "kills": 1.28,
+    "defense": 1.37
+  },
+  "PzSfl IVb": {
+    "nation": "DE",
+    "tier": 4,
+    "type": "SPG",
+    "damage": 435,
+    "winrate": 0.52,
+    "detections": 0.13,
+    "kills": 0.95,
+    "defense": 2.35
+  },
+  "Sturmpanzer II": {
+    "nation": "DE",
+    "tier": 4,
+    "type": "SPG",
+    "damage": 418,
+    "winrate": 0.54,
+    "detections": 0.23,
+    "kills": 1.12,
+    "defense": 1.64
+  },
+  "Hetzer": {
+    "nation": "DE",
+    "tier": 4,
+    "type": "TD",
+    "damage": 499,
+    "winrate": 0.58,
+    "detections": 0.63,
+    "kills": 1.53,
+    "defense": 1.31
+  },
+  "VK 30.01 (H)": {
+    "nation": "DE",
+    "tier": 5,
+    "type": "HT",
+    "damage": 680,
+    "winrate": 0.53,
+    "detections": 1.47,
+    "kills": 1.08,
+    "defense": 0.91
+  },
+  "VK 16.02 Leopard": {
+    "nation": "DE",
+    "tier": 5,
+    "type": "LT",
+    "damage": 247,
+    "winrate": 0.54,
+    "detections": 3.17,
+    "kills": 0.63,
+    "defense": 0.66
+  },
+  "Pz.Kpfw. IV Hydraulic": {
+    "nation": "DE",
+    "tier": 5,
+    "type": "MT",
+    "damage": null,
+    "winrate": null,
+    "detections": null,
+    "kills": null,
+    "defense": null
+  },
+  "Pz.Kpfw. III/IV": {
+    "nation": "DE",
+    "tier": 5,
+    "type": "MT",
+    "damage": 417,
+    "winrate": 0.53,
+    "detections": 1.63,
+    "kills": 0.89,
+    "defense": 0.86
+  },
+  "Pz.Kpfw. IV": {
+    "nation": "DE",
+    "tier": 5,
+    "type": "MT",
+    "damage": 605,
+    "winrate": 0.56,
+    "detections": 1.3,
+    "kills": 1.23,
+    "defense": 1.08
+  },
+  "T-25": {
+    "nation": "DE",
+    "tier": 5,
+    "type": "MT",
+    "damage": 602,
+    "winrate": 0.57,
+    "detections": 1.59,
+    "kills": 1.23,
+    "defense": 1.38
+  },
+  "Grille": {
+    "nation": "DE",
+    "tier": 5,
+    "type": "SPG",
+    "damage": 661,
+    "winrate": 0.52,
+    "detections": 0.12,
+    "kills": 1.11,
+    "defense": 1.6
+  },
+  "StuG III": {
+    "nation": "DE",
+    "tier": 5,
+    "type": "TD",
+    "damage": 616,
+    "winrate": 0.55,
+    "detections": 0.76,
+    "kills": 1.22,
+    "defense": 1.41
+  },
+  "VK 36.01 (H)": {
+    "nation": "DE",
+    "tier": 6,
+    "type": "HT",
+    "damage": 935,
+    "winrate": 0.59,
+    "detections": 1.43,
+    "kills": 1.33,
+    "defense": 1.4
+  },
+  "VK 28.01": {
+    "nation": "DE",
+    "tier": 6,
+    "type": "LT",
+    "damage": 551,
+    "winrate": 0.54,
+    "detections": 3.01,
+    "kills": 0.73,
+    "defense": 0.6
+  },
+  "Pz.Kpfw. V-IV Alpha": {
+    "nation": "DE",
+    "tier": 6,
+    "type": "MT",
+    "damage": null,
+    "winrate": null,
+    "detections": null,
+    "kills": null,
+    "defense": null
+  },
+  "Pz.Kpfw. V-IV": {
+    "nation": "DE",
+    "tier": 6,
+    "type": "MT",
+    "damage": 596,
+    "winrate": 0.53,
+    "detections": 2.08,
+    "kills": 0.98,
+    "defense": 1.23
+  },
+  "Pz IV Schmalturm": {
+    "nation": "DE",
+    "tier": 6,
+    "type": "MT",
+    "damage": 825,
+    "winrate": 0.53,
+    "detections": 1.15,
+    "kills": 1.1,
+    "defense": 1.76
+  },
+  "VK 30.01 (D)": {
+    "nation": "DE",
+    "tier": 6,
+    "type": "MT",
+    "damage": 831,
+    "winrate": 0.58,
+    "detections": 1.6,
+    "kills": 1.21,
+    "defense": 1.51
+  },
+  "VK 30.01 (P)": {
+    "nation": "DE",
+    "tier": 6,
+    "type": "MT",
+    "damage": 672,
+    "winrate": 0.53,
+    "detections": 1.32,
+    "kills": 0.94,
+    "defense": 0.92
+  },
+  "#germany_vehicles:VK3002M": {
+    "nation": "DE",
+    "tier": 6,
+    "type": "MT",
+    "damage": 672,
+    "winrate": 0.53,
+    "detections": 1.15,
+    "kills": 0.94,
+    "defense": 0.92
+  },
+  "Hummel": {
+    "nation": "DE",
+    "tier": 6,
+    "type": "SPG",
+    "damage": 999,
+    "winrate": 0.50,
+    "detections": 0.08,
+    "kills": 0.86,
+    "defense": 1.34
+  },
+  "Dicker Max": {
+    "nation": "DE",
+    "tier": 6,
+    "type": "TD",
+    "damage": 909,
+    "winrate": 0.54,
+    "detections": 0.8,
+    "kills": 1.23,
+    "defense": 1.17
+  },
+  "JagdPz IV": {
+    "nation": "DE",
+    "tier": 6,
+    "type": "TD",
+    "damage": 738,
+    "winrate": 0.53,
+    "detections": 0.74,
+    "kills": 1.06,
+    "defense": 1.24
+  },
+  "Pz.Kpfw. VI Tiger": {
+    "nation": "DE",
+    "tier": 7,
+    "type": "HT",
+    "damage": 1041,
+    "winrate": 0.52,
+    "detections": 0.97,
+    "kills": 0.95,
+    "defense": 1.03
+  },
+  "Pz.Kpfw. VI Tiger (P)": {
+    "nation": "DE",
+    "tier": 7,
+    "type": "HT",
+    "damage": 1120,
+    "winrate": 0.54,
+    "detections": 0.96,
+    "kills": 1,
+    "defense": 1.16
+  },
+  "Aufklärungspanzer Panther": {
+    "nation": "DE",
+    "tier": 7,
+    "type": "LT",
+    "damage": 703,
+    "winrate": 0.51,
+    "detections": 2.44,
+    "kills": 0.67,
+    "defense": 0.78
+  },
+  "Panther M10": {
+    "nation": "DE",
+    "tier": 7,
+    "type": "MT",
+    "damage": 958,
+    "winrate": 0.54,
+    "detections": 1.32,
+    "kills": 1.01,
+    "defense": 1.51
+  },
+  "Pz.Kpfw. V Panther": {
+    "nation": "DE",
+    "tier": 7,
+    "type": "MT",
+    "damage": 860,
+    "winrate": 0.53,
+    "detections": 1.15,
+    "kills": 0.86,
+    "defense": 1.32
+  },
+  "VK 30.02 (D)": {
+    "nation": "DE",
+    "tier": 7,
+    "type": "MT",
+    "damage": 863,
+    "winrate": 0.54,
+    "detections": 1.58,
+    "kills": 0.94,
+    "defense": 1.08
+  },
+  "G.W. Panther": {
+    "nation": "DE",
+    "tier": 7,
+    "type": "SPG",
+    "damage": 1293,
+    "winrate": 0.49,
+    "detections": 0.04,
+    "kills": 0.85,
+    "defense": 0.97
+  },
+  "E-25": {
+    "nation": "DE",
+    "tier": 7,
+    "type": "TD",
+    "damage": 1175,
+    "winrate": 0.53,
+    "detections": 1.7,
+    "kills": 1.47,
+    "defense": 2.6
+  },
+  "Jagdpanther": {
+    "nation": "DE",
+    "tier": 7,
+    "type": "TD",
+    "damage": 1129,
+    "winrate": 0.53,
+    "detections": 0.71,
+    "kills": 1.1,
+    "defense": 1.14
+  },
+  "L.we": {
+    "nation": "DE",
+    "tier": 8,
+    "type": "HT",
+    "damage": 1256,
+    "winrate": 0.49,
+    "detections": 0.86,
+    "kills": 0.86,
+    "defense": 0.84
+  },
+  "Pz.Kpfw. Tiger II": {
+    "nation": "DE",
+    "tier": 8,
+    "type": "HT",
+    "damage": 1291,
+    "winrate": 0.51,
+    "detections": 1.02,
+    "kills": 0.91,
+    "defense": 0.9
+  },
+  "VK 45.02 (P) Ausf. A": {
+    "nation": "DE",
+    "tier": 8,
+    "type": "HT",
+    "damage": 1286,
+    "winrate": 0.51,
+    "detections": 1.3,
+    "kills": 0.96,
+    "defense": 1.02
+  },
+  "Indien-Panzer": {
+    "nation": "DE",
+    "tier": 8,
+    "type": "MT",
+    "damage": 1234,
+    "winrate": 0.51,
+    "detections": 1.17,
+    "kills": 0.93,
+    "defense": 1.27
+  },
+  "Panther II": {
+    "nation": "DE",
+    "tier": 8,
+    "type": "MT",
+    "damage": 1062,
+    "winrate": 0.52,
+    "detections": 1.45,
+    "kills": 0.86,
+    "defense": 1.04
+  },
+  "GW Tiger (P)": {
+    "nation": "DE",
+    "tier": 8,
+    "type": "SPG",
+    "damage": 1297,
+    "winrate": 0.47,
+    "detections": 0.07,
+    "kills": 0.89,
+    "defense": 0.6
+  },
+  "8.8 cm Pak 43 JagdTiger": {
+    "nation": "DE",
+    "tier": 8,
+    "type": "TD",
+    "damage": 1395,
+    "winrate": 0.51,
+    "detections": 0.76,
+    "kills": 1.01,
+    "defense": 1.25
+  },
+  "Ferdinand": {
+    "nation": "DE",
+    "tier": 8,
+    "type": "TD",
+    "damage": 1491,
+    "winrate": 0.51,
+    "detections": 0.65,
+    "kills": 1.1,
+    "defense": 0.95
+  },
+  "JagdPanther II": {
+    "nation": "DE",
+    "tier": 8,
+    "type": "TD",
+    "damage": 1570,
+    "winrate": 0.51,
+    "detections": 0.79,
+    "kills": 1.16,
+    "defense": 1.08
+  },
+  "E-75": {
+    "nation": "DE",
+    "tier": 9,
+    "type": "HT",
+    "damage": 1630,
+    "winrate": 0.51,
+    "detections": 1.07,
+    "kills": 1,
+    "defense": 0.77
+  },
+  "VK 45.02 (P) Ausf. B": {
+    "nation": "DE",
+    "tier": 9,
+    "type": "HT",
+    "damage": 1529,
+    "winrate": 0.49,
+    "detections": 0.97,
+    "kills": 0.95,
+    "defense": 0.71
+  },
+  "E-50": {
+    "nation": "DE",
+    "tier": 9,
+    "type": "MT",
+    "damage": 1529,
+    "winrate": 0.51,
+    "detections": 1.57,
+    "kills": 1.02,
+    "defense": 0.92
+  },
+  "Leopard prototyp A": {
+    "nation": "DE",
+    "tier": 9,
+    "type": "MT",
+    "damage": 1527,
+    "winrate": 0.49,
+    "detections": 1.34,
+    "kills": 1,
+    "defense": 1.17
+  },
+  "GW Tiger": {
+    "nation": "DE",
+    "tier": 9,
+    "type": "SPG",
+    "damage": 1506,
+    "winrate": 0.48,
+    "detections": 0.04,
+    "kills": 0.84,
+    "defense": 0.58
+  },
+  "Jagdtiger": {
+    "nation": "DE",
+    "tier": 9,
+    "type": "TD",
+    "damage": 1819,
+    "winrate": 0.50,
+    "detections": 0.69,
+    "kills": 1.12,
+    "defense": 0.83
+  },
+  "VK 72.02 (K)": {
+    "nation": "DE",
+    "tier": 10,
+    "type": "HT",
+    "damage": null,
+    "winrate": null,
+    "detections": null,
+    "kills": null,
+    "defense": null
+  },
+  "E-100": {
+    "nation": "DE",
+    "tier": 10,
+    "type": "HT",
+    "damage": 1875,
+    "winrate": 0.49,
+    "detections": 0.99,
+    "kills": 0.96,
+    "defense": 0.56
+  },
+  "Maus": {
+    "nation": "DE",
+    "tier": 10,
+    "type": "HT",
+    "damage": 1650,
+    "winrate": 0.48,
+    "detections": 0.93,
+    "kills": 0.84,
+    "defense": 0.75
+  },
+  "E-50 Ausf. M": {
+    "nation": "DE",
+    "tier": 10,
+    "type": "MT",
+    "damage": 1726,
+    "winrate": 0.48,
+    "detections": 1.45,
+    "kills": 0.95,
+    "defense": 0.71
+  },
+  "Leopard 1": {
+    "nation": "DE",
+    "tier": 10,
+    "type": "MT",
+    "damage": 1752,
+    "winrate": 0.44,
+    "detections": 1.5,
+    "kills": 0.99,
+    "defense": 0.98
+  },
+  "GW E 100": {
+    "nation": "DE",
+    "tier": 10,
+    "type": "SPG",
+    "damage": 1678,
+    "winrate": 0.48,
+    "detections": 0.04,
+    "kills": 0.85,
+    "defense": 0.59
+  },
+  "JagdPz E-100": {
+    "nation": "DE",
+    "tier": 10,
+    "type": "TD",
+    "damage": 1920,
+    "winrate": 0.46,
+    "detections": 0.65,
+    "kills": 1.01,
+    "defense": 0.48
+  },
+  "Renault FT": {
+    "nation": "FR",
+    "tier": 1,
+    "type": "LT",
+    "damage": 256,
+    "winrate": 0.62,
+    "detections": 1.91,
+    "kills": 1.9,
+    "defense": 2.77
+  },
+  "D1": {
+    "nation": "FR",
+    "tier": 2,
+    "type": "LT",
+    "damage": 242,
+    "winrate": 0.54,
+    "detections": 1.36,
+    "kills": 1.38,
+    "defense": 2.42
+  },
+  "Hotchkiss H35": {
+    "nation": "FR",
+    "tier": 2,
+    "type": "LT",
+    "damage": 246,
+    "winrate": 0.60,
+    "detections": 1.28,
+    "kills": 1.48,
+    "defense": 2.5
+  },
+  "Renault FT 75 BS": {
+    "nation": "FR",
+    "tier": 2,
+    "type": "SPG",
+    "damage": 271,
+    "winrate": 0.55,
+    "detections": 0.21,
+    "kills": 1.41,
+    "defense": 1.86
+  },
+  "Renault FT AC": {
+    "nation": "FR",
+    "tier": 2,
+    "type": "TD",
+    "damage": 349,
+    "winrate": 0.61,
+    "detections": 0.95,
+    "kills": 2.17,
+    "defense": 1.74
+  },
+  "AMX 38": {
+    "nation": "FR",
+    "tier": 3,
+    "type": "LT",
+    "damage": 220,
+    "winrate": 0.57,
+    "detections": 1.06,
+    "kills": 0.94,
+    "defense": 1.6
+  },
+  "D2": {
+    "nation": "FR",
+    "tier": 3,
+    "type": "MT",
+    "damage": 319,
+    "winrate": 0.60,
+    "detections": 1.01,
+    "kills": 1.37,
+    "defense": 2
+  },
+  "Lorraine 39L AM": {
+    "nation": "FR",
+    "tier": 3,
+    "type": "SPG",
+    "damage": 497,
+    "winrate": 0.56,
+    "detections": 0.16,
+    "kills": 1.39,
+    "defense": 2.27
+  },
+  "FCM 36 Pak 40": {
+    "nation": "FR",
+    "tier": 3,
+    "type": "TD",
+    "damage": 492,
+    "winrate": 0.64,
+    "detections": 1.1,
+    "kills": 2.05,
+    "defense": 2.31
+  },
+  "Renault UE 57": {
+    "nation": "FR",
+    "tier": 3,
+    "type": "TD",
+    "damage": 395,
+    "winrate": 0.61,
+    "detections": 1.09,
+    "kills": 1.58,
+    "defense": 1.96
+  },
+  "B1": {
+    "nation": "FR",
+    "tier": 4,
+    "type": "HT",
+    "damage": 322,
+    "winrate": 0.52,
+    "detections": 1.17,
+    "kills": 1.07,
+    "defense": 1.37
+  },
+  "AMX 40": {
+    "nation": "FR",
+    "tier": 4,
+    "type": "LT",
+    "damage": 221,
+    "winrate": 0.51,
+    "detections": 0.85,
+    "kills": 0.69,
+    "defense": 0.95
+  },
+  "AMX 13 105 AM mle. 50": {
+    "nation": "FR",
+    "tier": 4,
+    "type": "SPG",
+    "damage": 400,
+    "winrate": 0.51,
+    "detections": 0.11,
+    "kills": 0.95,
+    "defense": 1.64
+  },
+  "Somua SAu 40": {
+    "nation": "FR",
+    "tier": 4,
+    "type": "TD",
+    "damage": 392,
+    "winrate": 0.54,
+    "detections": 0.59,
+    "kills": 1.14,
+    "defense": 1.11
+  },
+  "BDR G1 B": {
+    "nation": "FR",
+    "tier": 5,
+    "type": "HT",
+    "damage": 652,
+    "winrate": 0.54,
+    "detections": 0.85,
+    "kills": 1.22,
+    "defense": 1.12
+  },
+  "ELC AMX": {
+    "nation": "FR",
+    "tier": 5,
+    "type": "LT",
+    "damage": 447,
+    "winrate": 0.55,
+    "detections": 2.94,
+    "kills": 0.71,
+    "defense": 0.77
+  },
+  "105 leFH18B2": {
+    "nation": "FR",
+    "tier": 5,
+    "type": "SPG",
+    "damage": 715,
+    "winrate": 0.55,
+    "detections": 0.1,
+    "kills": 1.41,
+    "defense": 2.13
+  },
+  "AMX 105AM": {
+    "nation": "FR",
+    "tier": 5,
+    "type": "SPG",
+    "damage": 686,
+    "winrate": 0.53,
+    "detections": 0.11,
+    "kills": 1.25,
+    "defense": 2.33
+  },
+  "S35 CA": {
+    "nation": "FR",
+    "tier": 5,
+    "type": "TD",
+    "damage": 645,
+    "winrate": 0.53,
+    "detections": 0.86,
+    "kills": 1.25,
+    "defense": 1.28
+  },
+  "ARL 44": {
+    "nation": "FR",
+    "tier": 6,
+    "type": "HT",
+    "damage": 829,
+    "winrate": 0.53,
+    "detections": 0.87,
+    "kills": 0.99,
+    "defense": 0.92
+  },
+  "AMX 12 t": {
+    "nation": "FR",
+    "tier": 6,
+    "type": "LT",
+    "damage": 445,
+    "winrate": 0.52,
+    "detections": 1.94,
+    "kills": 0.59,
+    "defense": 0.63
+  },
+  "AMX 13 F3 AM": {
+    "nation": "FR",
+    "tier": 6,
+    "type": "SPG",
+    "damage": 1092,
+    "winrate": 0.51,
+    "detections": 0.08,
+    "kills": 0.94,
+    "defense": 1.5
+  },
+  "ARL V39": {
+    "nation": "FR",
+    "tier": 6,
+    "type": "TD",
+    "damage": 777,
+    "winrate": 0.51,
+    "detections": 0.71,
+    "kills": 1.02,
+    "defense": 1.21
+  },
+  "AMX M4 mle. 45": {
+    "nation": "FR",
+    "tier": 7,
+    "type": "HT",
+    "damage": 1046,
+    "winrate": 0.52,
+    "detections": 0.96,
+    "kills": 0.91,
+    "defense": 1
+  },
+  "AMX 13 75": {
+    "nation": "FR",
+    "tier": 7,
+    "type": "LT",
+    "damage": 565,
+    "winrate": 0.53,
+    "detections": 2.04,
+    "kills": 0.68,
+    "defense": 0.74
+  },
+  "Lorraine 155 mle. 50": {
+    "nation": "FR",
+    "tier": 7,
+    "type": "SPG",
+    "damage": 1270,
+    "winrate": 0.49,
+    "detections": 0.06,
+    "kills": 0.83,
+    "defense": 1.2
+  },
+  "AMX AC mle. 46": {
+    "nation": "FR",
+    "tier": 7,
+    "type": "TD",
+    "damage": 1021,
+    "winrate": 0.52,
+    "detections": 0.75,
+    "kills": 0.94,
+    "defense": 0.93
+  },
+  "AMX 50 100": {
+    "nation": "FR",
+    "tier": 8,
+    "type": "HT",
+    "damage": 1437,
+    "winrate": 0.52,
+    "detections": 1.01,
+    "kills": 1.14,
+    "defense": 1.18
+  },
+  "FCM 50 t": {
+    "nation": "FR",
+    "tier": 8,
+    "type": "HT",
+    "damage": 1330,
+    "winrate": 0.51,
+    "detections": 1.4,
+    "kills": 1.02,
+    "defense": 1.21
+  },
+  "AMX 13 90": {
+    "nation": "FR",
+    "tier": 8,
+    "type": "LT",
+    "damage": 837,
+    "winrate": 0.54,
+    "detections": 2.51,
+    "kills": 0.81,
+    "defense": 0.72
+  },
+  "Lorraine 155 mle. 51": {
+    "nation": "FR",
+    "tier": 8,
+    "type": "SPG",
+    "damage": 1363,
+    "winrate": 0.47,
+    "detections": 0.07,
+    "kills": 0.89,
+    "defense": 0.84
+  },
+  "AMX AC mle. 48": {
+    "nation": "FR",
+    "tier": 8,
+    "type": "TD",
+    "damage": 1357,
+    "winrate": 0.51,
+    "detections": 0.84,
+    "kills": 1.01,
+    "defense": 1.04
+  },
+  "AMX 50 120": {
+    "nation": "FR",
+    "tier": 9,
+    "type": "HT",
+    "damage": 1725,
+    "winrate": 0.50,
+    "detections": 0.96,
+    "kills": 1.16,
+    "defense": 0.98
+  },
+  "Lorraine 40 t": {
+    "nation": "FR",
+    "tier": 9,
+    "type": "MT",
+    "damage": 1354,
+    "winrate": 0.52,
+    "detections": 1.52,
+    "kills": 1.07,
+    "defense": 0.96
+  },
+  "Bat Chatillon 155 55": {
+    "nation": "FR",
+    "tier": 9,
+    "type": "SPG",
+    "damage": 1506,
+    "winrate": 0.47,
+    "detections": 0.03,
+    "kills": 0.97,
+    "defense": 0.58
+  },
+  "AMX 50 Foch": {
+    "nation": "FR",
+    "tier": 9,
+    "type": "TD",
+    "damage": 1741,
+    "winrate": 0.51,
+    "detections": 1.03,
+    "kills": 1.07,
+    "defense": 0.97
+  },
+  "AMX 50B": {
+    "nation": "FR",
+    "tier": 10,
+    "type": "HT",
+    "damage": 1977,
+    "winrate": 0.49,
+    "detections": 1.08,
+    "kills": 1.1,
+    "defense": 0.93
+  },
+  "Bat.-Châtillon 25 t": {
+    "nation": "FR",
+    "tier": 10,
+    "type": "MT",
+    "damage": 1743,
+    "winrate": 0.50,
+    "detections": 2.16,
+    "kills": 1.17,
+    "defense": 0.9
+  },
+  "Bat Chatillon 155": {
+    "nation": "FR",
+    "tier": 10,
+    "type": "SPG",
+    "damage": 1670,
+    "winrate": 0.49,
+    "detections": 0.08,
+    "kills": 0.97,
+    "defense": 0.88
+  },
+  "Bat Chatillon 155 58": {
+    "nation": "FR",
+    "tier": 10,
+    "type": "SPG",
+    "damage": 1670,
+    "winrate": 0.49,
+    "detections": 0.08,
+    "kills": 0.97,
+    "defense": 0.88
+  },
+  "AMX 50 Foch (155)": {
+    "nation": "FR",
+    "tier": 10,
+    "type": "TD",
+    "damage": 2299,
+    "winrate": 0.50,
+    "detections": 0.96,
+    "kills": 1.35,
+    "defense": 0.83
+  },
+  "Chi-Nu Kai": {
+    "nation": "JP",
+    "tier": 5,
+    "type": "MT",
+    "damage": 488,
+    "winrate": 0.56,
+    "detections": 1.79,
+    "kills": 1.06,
+    "defense": 1.26
+  },
+  "MS-1": {
+    "nation": "RU",
+    "tier": 1,
+    "type": "LT",
+    "damage": 264,
+    "winrate": 0.62,
+    "detections": 1.55,
+    "kills": 2.06,
+    "defense": 1.79
+  },
+  "BT-2": {
+    "nation": "RU",
+    "tier": 2,
+    "type": "LT",
+    "damage": 291,
+    "winrate": 0.61,
+    "detections": 2.2,
+    "kills": 1.79,
+    "defense": 1.49
+  },
+  "T-26": {
+    "nation": "RU",
+    "tier": 2,
+    "type": "LT",
+    "damage": 286,
+    "winrate": 0.60,
+    "detections": 1.23,
+    "kills": 1.76,
+    "defense": 2.14
+  },
+  "T-60": {
+    "nation": "RU",
+    "tier": 2,
+    "type": "LT",
+    "damage": 294,
+    "winrate": 0.60,
+    "detections": 1.72,
+    "kills": 1.76,
+    "defense": 2.51
+  },
+  "MkVII Tetrarch": {
+    "nation": "RU",
+    "tier": 2,
+    "type": "LT",
+    "damage": 297,
+    "winrate": 0.59,
+    "detections": 1.61,
+    "kills": 1.78,
+    "defense": 1.72
+  },
+  "SU-18": {
+    "nation": "RU",
+    "tier": 2,
+    "type": "SPG",
+    "damage": 240,
+    "winrate": 0.53,
+    "detections": 0.16,
+    "kills": 1.28,
+    "defense": 2.03
+  },
+  "AT-1": {
+    "nation": "RU",
+    "tier": 2,
+    "type": "TD",
+    "damage": 294,
+    "winrate": 0.57,
+    "detections": 0.47,
+    "kills": 1.67,
+    "defense": 1.71
+  },
+  "BT-7": {
+    "nation": "RU",
+    "tier": 3,
+    "type": "LT",
+    "damage": 204,
+    "winrate": 0.54,
+    "detections": 2.31,
+    "kills": 0.83,
+    "defense": 1.21
+  },
+  "BT-SV": {
+    "nation": "RU",
+    "tier": 3,
+    "type": "LT",
+    "damage": 364,
+    "winrate": 0.64,
+    "detections": 1.31,
+    "kills": 1.58,
+    "defense": 2.01
+  },
+  "LTP": {
+    "nation": "RU",
+    "tier": 3,
+    "type": "LT",
+    "damage": 362,
+    "winrate": 0.59,
+    "detections": 1.35,
+    "kills": 1.71,
+    "defense": 2.33
+  },
+  "M3 Light": {
+    "nation": "RU",
+    "tier": 3,
+    "type": "LT",
+    "damage": 208,
+    "winrate": 0.53,
+    "detections": 1.83,
+    "kills": 0.91,
+    "defense": 1.17
+  },
+  "T-127": {
+    "nation": "RU",
+    "tier": 3,
+    "type": "LT",
+    "damage": 377,
+    "winrate": 0.61,
+    "detections": 1.78,
+    "kills": 1.82,
+    "defense": 1.81
+  },
+  "T-46": {
+    "nation": "RU",
+    "tier": 3,
+    "type": "LT",
+    "damage": 239,
+    "winrate": 0.54,
+    "detections": 1.51,
+    "kills": 0.98,
+    "defense": 1.01
+  },
+  "T-70": {
+    "nation": "RU",
+    "tier": 3,
+    "type": "LT",
+    "damage": 378,
+    "winrate": 0.61,
+    "detections": 1.84,
+    "kills": 1.51,
+    "defense": 1.66
+  },
+  "SU-26": {
+    "nation": "RU",
+    "tier": 3,
+    "type": "SPG",
+    "damage": 591,
+    "winrate": 0.59,
+    "detections": 0.13,
+    "kills": 1.62,
+    "defense": 2.24
+  },
+  "SU-76": {
+    "nation": "RU",
+    "tier": 3,
+    "type": "TD",
+    "damage": 376,
+    "winrate": 0.57,
+    "detections": 0.86,
+    "kills": 1.41,
+    "defense": 1.62
+  },
+  "A-20": {
+    "nation": "RU",
+    "tier": 4,
+    "type": "LT",
+    "damage": 149,
+    "winrate": 0.51,
+    "detections": 2.77,
+    "kills": 0.43,
+    "defense": 0.43
+  },
+  "T-50": {
+    "nation": "RU",
+    "tier": 4,
+    "type": "LT",
+    "damage": 198,
+    "winrate": 0.55,
+    "detections": 3.77,
+    "kills": 0.54,
+    "defense": 0.53
+  },
+  "T-80": {
+    "nation": "RU",
+    "tier": 4,
+    "type": "LT",
+    "damage": 460,
+    "winrate": 0.61,
+    "detections": 1.94,
+    "kills": 1.32,
+    "defense": 2.13
+  },
+  "Valentine": {
+    "nation": "RU",
+    "tier": 4,
+    "type": "LT",
+    "damage": 407,
+    "winrate": 0.58,
+    "detections": 1.8,
+    "kills": 1.51,
+    "defense": 1.88
+  },
+  "A-32": {
+    "nation": "RU",
+    "tier": 4,
+    "type": "MT",
+    "damage": 239,
+    "winrate": 0.53,
+    "detections": 2.68,
+    "kills": 0.75,
+    "defense": 0.56
+  },
+  "T-28": {
+    "nation": "RU",
+    "tier": 4,
+    "type": "MT",
+    "damage": 343,
+    "winrate": 0.53,
+    "detections": 1.23,
+    "kills": 0.96,
+    "defense": 0.74
+  },
+  "SU-5": {
+    "nation": "RU",
+    "tier": 4,
+    "type": "SPG",
+    "damage": 616,
+    "winrate": 0.51,
+    "detections": 0.11,
+    "kills": 1.08,
+    "defense": 1.65
+  },
+  "SU-85B": {
+    "nation": "RU",
+    "tier": 4,
+    "type": "TD",
+    "damage": 453,
+    "winrate": 0.55,
+    "detections": 0.95,
+    "kills": 1.23,
+    "defense": 1.21
+  },
+  "KV": {
+    "nation": "RU",
+    "tier": 5,
+    "type": "HT",
+    "damage": 612,
+    "winrate": 0.53,
+    "detections": 0.73,
+    "kills": 1.06,
+    "defense": 0.62
+  },
+  "Churchill III": {
+    "nation": "RU",
+    "tier": 5,
+    "type": "HT",
+    "damage": 627,
+    "winrate": 0.55,
+    "detections": 1.2,
+    "kills": 1.34,
+    "defense": 1.59
+  },
+  "KV-1": {
+    "nation": "RU",
+    "tier": 5,
+    "type": "HT",
+    "damage": 650,
+    "winrate": 0.55,
+    "detections": 0.82,
+    "kills": 1.22,
+    "defense": 1.03
+  },
+  "KV-220 Beta-Test": {
+    "nation": "RU",
+    "tier": 5,
+    "type": "HT",
+    "damage": 647,
+    "winrate": 0.60,
+    "detections": 1.45,
+    "kills": 1.5,
+    "defense": 0.99
+  },
+  "KV-220 (action)": {
+    "nation": "RU",
+    "tier": 5,
+    "type": "HT",
+    "damage": 647,
+    "winrate": 0.60,
+    "detections": 1.45,
+    "kills": 1.5,
+    "defense": 0.99
+  },
+  "Matilda": {
+    "nation": "RU",
+    "tier": 5,
+    "type": "MT",
+    "damage": 551,
+    "winrate": 0.61,
+    "detections": 0.94,
+    "kills": 1.54,
+    "defense": 2.01
+  },
+  "T-34": {
+    "nation": "RU",
+    "tier": 5,
+    "type": "MT",
+    "damage": 476,
+    "winrate": 0.54,
+    "detections": 1.39,
+    "kills": 1.02,
+    "defense": 1.08
+  },
+  "SU-122A": {
+    "nation": "RU",
+    "tier": 5,
+    "type": "SPG",
+    "damage": 612,
+    "winrate": 0.51,
+    "detections": 0.07,
+    "kills": 1.07,
+    "defense": 1.43
+  },
+  "SU-85I": {
+    "nation": "RU",
+    "tier": 5,
+    "type": "TD",
+    "damage": null,
+    "winrate": null,
+    "detections": null,
+    "kills": null,
+    "defense": null
+  },
+  "SU-85": {
+    "nation": "RU",
+    "tier": 5,
+    "type": "TD",
+    "damage": 615,
+    "winrate": 0.54,
+    "detections": 0.57,
+    "kills": 1.23,
+    "defense": 1.26
+  },
+  "KV-1S": {
+    "nation": "RU",
+    "tier": 6,
+    "type": "HT",
+    "damage": 941,
+    "winrate": 0.57,
+    "detections": 1.15,
+    "kills": 1.25,
+    "defense": 0.88
+  },
+  "KV-2": {
+    "nation": "RU",
+    "tier": 6,
+    "type": "HT",
+    "damage": 896,
+    "winrate": 0.55,
+    "detections": 0.76,
+    "kills": 1.15,
+    "defense": 0.86
+  },
+  "T-150": {
+    "nation": "RU",
+    "tier": 6,
+    "type": "HT",
+    "damage": 792,
+    "winrate": 0.54,
+    "detections": 0.82,
+    "kills": 1,
+    "defense": 0.78
+  },
+  "T-50-2": {
+    "nation": "RU",
+    "tier": 6,
+    "type": "LT",
+    "damage": 306,
+    "winrate": 0.53,
+    "detections": 4.47,
+    "kills": 0.5,
+    "defense": 0.65
+  },
+  "MT-25": {
+    "nation": "RU",
+    "tier": 6,
+    "type": "LT",
+    "damage": 310,
+    "winrate": 0.53,
+    "detections": 4.4,
+    "kills": 0.49,
+    "defense": 0.62
+  },
+  "A-43": {
+    "nation": "RU",
+    "tier": 6,
+    "type": "MT",
+    "damage": 672,
+    "winrate": 0.53,
+    "detections": 1.15,
+    "kills": 0.94,
+    "defense": 0.92
+  },
+  "T-34-85": {
+    "nation": "RU",
+    "tier": 6,
+    "type": "MT",
+    "damage": 747,
+    "winrate": 0.55,
+    "detections": 1.41,
+    "kills": 1.04,
+    "defense": 1.04
+  },
+  "SU-8": {
+    "nation": "RU",
+    "tier": 6,
+    "type": "SPG",
+    "damage": 1115,
+    "winrate": 0.51,
+    "detections": 0.07,
+    "kills": 0.94,
+    "defense": 1.35
+  },
+  "SU-100": {
+    "nation": "RU",
+    "tier": 6,
+    "type": "TD",
+    "damage": 899,
+    "winrate": 0.56,
+    "detections": 0.84,
+    "kills": 1.27,
+    "defense": 1.26
+  },
+  "SU-100Y": {
+    "nation": "RU",
+    "tier": 6,
+    "type": "TD",
+    "damage": 986,
+    "winrate": 0.57,
+    "detections": 0.73,
+    "kills": 1.35,
+    "defense": 0.85
+  },
+  "IS": {
+    "nation": "RU",
+    "tier": 7,
+    "type": "HT",
+    "damage": 1086,
+    "winrate": 0.54,
+    "detections": 1.08,
+    "kills": 1.08,
+    "defense": 0.84
+  },
+  "KV-3": {
+    "nation": "RU",
+    "tier": 7,
+    "type": "HT",
+    "damage": 1144,
+    "winrate": 0.55,
+    "detections": 0.9,
+    "kills": 1.11,
+    "defense": 0.84
+  },
+  "A-44": {
+    "nation": "RU",
+    "tier": 7,
+    "type": "MT",
+    "damage": 754,
+    "winrate": 0.53,
+    "detections": 1.15,
+    "kills": 0.86,
+    "defense": 1.04
+  },
+  "KV-13": {
+    "nation": "RU",
+    "tier": 7,
+    "type": "MT",
+    "damage": 754,
+    "winrate": 0.54,
+    "detections": 1.63,
+    "kills": 0.86,
+    "defense": 1.11
+  },
+  "T-43": {
+    "nation": "RU",
+    "tier": 7,
+    "type": "MT",
+    "damage": 906,
+    "winrate": 0.55,
+    "detections": 1.58,
+    "kills": 0.99,
+    "defense": 1.06
+  },
+  "S-51": {
+    "nation": "RU",
+    "tier": 7,
+    "type": "SPG",
+    "damage": 1234,
+    "winrate": 0.48,
+    "detections": 0.04,
+    "kills": 0.84,
+    "defense": 0.66
+  },
+  "SU-14-1": {
+    "nation": "RU",
+    "tier": 7,
+    "type": "SPG",
+    "damage": 1234,
+    "winrate": 0.48,
+    "detections": 0.04,
+    "kills": 0.83,
+    "defense": 0.66
+  },
+  "SU-100M1": {
+    "nation": "RU",
+    "tier": 7,
+    "type": "TD",
+    "damage": 1058,
+    "winrate": 0.54,
+    "detections": 0.93,
+    "kills": 1.05,
+    "defense": 1.29
+  },
+  "SU-122-44": {
+    "nation": "RU",
+    "tier": 7,
+    "type": "TD",
+    "damage": 1237,
+    "winrate": 0.55,
+    "detections": 0.84,
+    "kills": 1.33,
+    "defense": 1.12
+  },
+  "SU-152": {
+    "nation": "RU",
+    "tier": 7,
+    "type": "TD",
+    "damage": 1106,
+    "winrate": 0.53,
+    "detections": 0.6,
+    "kills": 1.12,
+    "defense": 0.97
+  },
+  "IS-3": {
+    "nation": "RU",
+    "tier": 8,
+    "type": "HT",
+    "damage": 1382,
+    "winrate": 0.52,
+    "detections": 1.06,
+    "kills": 1,
+    "defense": 0.84
+  },
+  "KV-4": {
+    "nation": "RU",
+    "tier": 8,
+    "type": "HT",
+    "damage": 1245,
+    "winrate": 0.52,
+    "detections": 0.84,
+    "kills": 0.88,
+    "defense": 0.79
+  },
+  "KV-5": {
+    "nation": "RU",
+    "tier": 8,
+    "type": "HT",
+    "damage": 1276,
+    "winrate": 0.51,
+    "detections": 1.15,
+    "kills": 1.03,
+    "defense": 0.92
+  },
+  "IS-6": {
+    "nation": "RU",
+    "tier": 8,
+    "type": "HT",
+    "damage": 1413,
+    "winrate": 0.53,
+    "detections": 1.14,
+    "kills": 1.1,
+    "defense": 0.94
+  },
+  "Object 416": {
+    "nation": "RU",
+    "tier": 8,
+    "type": "MT",
+    "damage": 1062,
+    "winrate": 0.51,
+    "detections": 0.95,
+    "kills": 0.86,
+    "defense": 0.89
+  },
+  "T-44": {
+    "nation": "RU",
+    "tier": 8,
+    "type": "MT",
+    "damage": 1071,
+    "winrate": 0.54,
+    "detections": 1.75,
+    "kills": 0.93,
+    "defense": 1.06
+  },
+  "SU-14-2": {
+    "nation": "RU",
+    "tier": 8,
+    "type": "SPG",
+    "damage": 1297,
+    "winrate": 0.49,
+    "detections": 0.07,
+    "kills": 0.89,
+    "defense": 0.65
+  },
+  "ISU-152": {
+    "nation": "RU",
+    "tier": 8,
+    "type": "TD",
+    "damage": 1568,
+    "winrate": 0.51,
+    "detections": 0.61,
+    "kills": 1.18,
+    "defense": 0.86
+  },
+  "SU-101": {
+    "nation": "RU",
+    "tier": 8,
+    "type": "TD",
+    "damage": 1265,
+    "winrate": 0.50,
+    "detections": 0.94,
+    "kills": 1.01,
+    "defense": 1.13
+  },
+  "IS-8": {
+    "nation": "RU",
+    "tier": 9,
+    "type": "HT",
+    "damage": 1614,
+    "winrate": 0.50,
+    "detections": 1.14,
+    "kills": 1,
+    "defense": 0.75
+  },
+  "ST-I": {
+    "nation": "RU",
+    "tier": 9,
+    "type": "HT",
+    "damage": 1637,
+    "winrate": 0.50,
+    "detections": 0.97,
+    "kills": 0.98,
+    "defense": 0.83
+  },
+  "T-54": {
+    "nation": "RU",
+    "tier": 9,
+    "type": "MT",
+    "damage": 1564,
+    "winrate": 0.54,
+    "detections": 1.95,
+    "kills": 1.12,
+    "defense": 1
+  },
+  "212A": {
+    "nation": "RU",
+    "tier": 9,
+    "type": "SPG",
+    "damage": 1600,
+    "winrate": 0.49,
+    "detections": 0.03,
+    "kills": 0.87,
+    "defense": 0.63
+  },
+  "Object 704": {
+    "nation": "RU",
+    "tier": 9,
+    "type": "TD",
+    "damage": 1932,
+    "winrate": 0.51,
+    "detections": 0.71,
+    "kills": 1.21,
+    "defense": 0.79
+  },
+  "SU-122-54": {
+    "nation": "RU",
+    "tier": 9,
+    "type": "TD",
+    "damage": 1524,
+    "winrate": 0.48,
+    "detections": 0.93,
+    "kills": 1.02,
+    "defense": 1.06
+  },
+  "IS-4": {
+    "nation": "RU",
+    "tier": 10,
+    "type": "HT",
+    "damage": 1805,
+    "winrate": 0.48,
+    "detections": 1.09,
+    "kills": 0.93,
+    "defense": 0.87
+  },
+  "IS-7": {
+    "nation": "RU",
+    "tier": 10,
+    "type": "HT",
+    "damage": 1723,
+    "winrate": 0.48,
+    "detections": 1.16,
+    "kills": 0.88,
+    "defense": 0.65
+  },
+  "Object 907": {
+    "nation": "RU",
+    "tier": 10,
+    "type": "MT",
+    "damage": null,
+    "winrate": null,
+    "detections": null,
+    "kills": null,
+    "defense": null
+  },
+  "Object 140": {
+    "nation": "RU",
+    "tier": 10,
+    "type": "MT",
+    "damage": 1753,
+    "winrate": 0.49,
+    "detections": 1.68,
+    "kills": 1.03,
+    "defense": 0.84
+  },
+  "T-62A": {
+    "nation": "RU",
+    "tier": 10,
+    "type": "MT",
+    "damage": 1753,
+    "winrate": 0.49,
+    "detections": 1.68,
+    "kills": 1.03,
+    "defense": 0.84
+  },
+  "Object 261": {
+    "nation": "RU",
+    "tier": 10,
+    "type": "SPG",
+    "damage": 1710,
+    "winrate": 0.47,
+    "detections": 0.05,
+    "kills": 0.89,
+    "defense": 0.65
+  },
+  "Object 263": {
+    "nation": "RU",
+    "tier": 10,
+    "type": "TD",
+    "damage": 1948,
+    "winrate": 0.46,
+    "detections": 0.98,
+    "kills": 1.06,
+    "defense": 1.02
+  },
+  "Object 268": {
+    "nation": "RU",
+    "tier": 10,
+    "type": "TD",
+    "damage": 2240,
+    "winrate": 0.49,
+    "detections": 0.86,
+    "kills": 1.21,
+    "defense": 0.76
+  },
+  "Vickers Medium Mk. I": {
+    "nation": "UK",
+    "tier": 1,
+    "type": "MT",
+    "damage": 261,
+    "winrate": 0.62,
+    "detections": 1.35,
+    "kills": 2.08,
+    "defense": 1.74
+  },
+  "Cruiser Mk. I": {
+    "nation": "UK",
+    "tier": 2,
+    "type": "LT",
+    "damage": 343,
+    "winrate": 0.61,
+    "detections": 1.91,
+    "kills": 2,
+    "defense": 1.4
+  },
+  "Cruiser Mk. III": {
+    "nation": "UK",
+    "tier": 2,
+    "type": "LT",
+    "damage": 353,
+    "winrate": 0.66,
+    "detections": 2.36,
+    "kills": 2.12,
+    "defense": 1.47
+  },
+  "Vickers Medium Mk. II": {
+    "nation": "UK",
+    "tier": 2,
+    "type": "MT",
+    "damage": 272,
+    "winrate": 0.57,
+    "detections": 1.13,
+    "kills": 1.61,
+    "defense": 1.29
+  },
+  "Loyd Gun Carriage": {
+    "nation": "UK",
+    "tier": 2,
+    "type": "SPG",
+    "damage": 240,
+    "winrate": 0.53,
+    "detections": 0.16,
+    "kills": 1.28,
+    "defense": 1.86
+  },
+  "Universal Carrier 2-pdr": {
+    "nation": "UK",
+    "tier": 2,
+    "type": "TD",
+    "damage": 327,
+    "winrate": 0.62,
+    "detections": 1.51,
+    "kills": 1.98,
+    "defense": 1.92
+  },
+  "Cruiser Mk. II": {
+    "nation": "UK",
+    "tier": 3,
+    "type": "LT",
+    "damage": 331,
+    "winrate": 0.60,
+    "detections": 1.02,
+    "kills": 1.55,
+    "defense": 1.36
+  },
+  "Cruiser Mk. IV": {
+    "nation": "UK",
+    "tier": 3,
+    "type": "LT",
+    "damage": 382,
+    "winrate": 0.63,
+    "detections": 2,
+    "kills": 1.67,
+    "defense": 1.43
+  },
+  "Vickers Medium Mk. III": {
+    "nation": "UK",
+    "tier": 3,
+    "type": "MT",
+    "damage": 336,
+    "winrate": 0.56,
+    "detections": 1.09,
+    "kills": 1.29,
+    "defense": 1.03
+  },
+  "Sexton I": {
+    "nation": "UK",
+    "tier": 3,
+    "type": "SPG",
+    "damage": 379,
+    "winrate": 0.52,
+    "detections": 0.12,
+    "kills": 1.06,
+    "defense": 1.65
+  },
+  "Sexton II": {
+    "nation": "UK",
+    "tier": 3,
+    "type": "SPG",
+    "damage": 379,
+    "winrate": 0.52,
+    "detections": 0.12,
+    "kills": 1.06,
+    "defense": 1.65
+  },
+  "Valentine AT": {
+    "nation": "UK",
+    "tier": 3,
+    "type": "TD",
+    "damage": 401,
+    "winrate": 0.59,
+    "detections": 0.97,
+    "kills": 1.76,
+    "defense": 1.61
+  },
+  "Covenanter": {
+    "nation": "UK",
+    "tier": 4,
+    "type": "LT",
+    "damage": 358,
+    "winrate": 0.56,
+    "detections": 1.84,
+    "kills": 1.05,
+    "defense": 1.1
+  },
+  "Valentine": {
+    "nation": "UK",
+    "tier": 4,
+    "type": "LT",
+    "damage": 370,
+    "winrate": 0.55,
+    "detections": 0.89,
+    "kills": 0.99,
+    "defense": 1.51
+  },
+  "Matilda": {
+    "nation": "UK",
+    "tier": 4,
+    "type": "MT",
+    "damage": 593,
+    "winrate": 0.58,
+    "detections": 1.18,
+    "kills": 1.42,
+    "defense": 1.66
+  },
+  "Birch Gun": {
+    "nation": "UK",
+    "tier": 4,
+    "type": "SPG",
+    "damage": 400,
+    "winrate": 0.51,
+    "detections": 0.11,
+    "kills": 0.95,
+    "defense": 1.64
+  },
+  "Alecto": {
+    "nation": "UK",
+    "tier": 4,
+    "type": "TD",
+    "damage": 486,
+    "winrate": 0.57,
+    "detections": 1.48,
+    "kills": 1.45,
+    "defense": 1.75
+  },
+  "Churchill I": {
+    "nation": "UK",
+    "tier": 5,
+    "type": "HT",
+    "damage": 675,
+    "winrate": 0.56,
+    "detections": 0.92,
+    "kills": 1.25,
+    "defense": 1.49
+  },
+  "Excelsior": {
+    "nation": "UK",
+    "tier": 5,
+    "type": "HT",
+    "damage": 685,
+    "winrate": 0.57,
+    "detections": 1.41,
+    "kills": 1.54,
+    "defense": 1.95
+  },
+  "Crusader": {
+    "nation": "UK",
+    "tier": 5,
+    "type": "LT",
+    "damage": 488,
+    "winrate": 0.56,
+    "detections": 1.79,
+    "kills": 1.06,
+    "defense": 1.26
+  },
+  "Matilda Black Prince": {
+    "nation": "UK",
+    "tier": 5,
+    "type": "MT",
+    "damage": 548,
+    "winrate": 0.55,
+    "detections": 0.82,
+    "kills": 1.26,
+    "defense": 1.41
+  },
+  "Bishop": {
+    "nation": "UK",
+    "tier": 5,
+    "type": "SPG",
+    "damage": 612,
+    "winrate": 0.55,
+    "detections": 0.09,
+    "kills": 1.07,
+    "defense": 1.76
+  },
+  "AT 2": {
+    "nation": "UK",
+    "tier": 5,
+    "type": "TD",
+    "damage": 625,
+    "winrate": 0.59,
+    "detections": 0.83,
+    "kills": 1.31,
+    "defense": 2.12
+  },
+  "Churchill VII": {
+    "nation": "UK",
+    "tier": 6,
+    "type": "HT",
+    "damage": 814,
+    "winrate": 0.54,
+    "detections": 0.79,
+    "kills": 1.08,
+    "defense": 1.25
+  },
+  "TOG II*": {
+    "nation": "UK",
+    "tier": 6,
+    "type": "HT",
+    "damage": 894,
+    "winrate": 0.55,
+    "detections": 0.62,
+    "kills": 1.24,
+    "defense": 1.51
+  },
+  "Cromwell": {
+    "nation": "UK",
+    "tier": 6,
+    "type": "MT",
+    "damage": 750,
+    "winrate": 0.56,
+    "detections": 2.11,
+    "kills": 1.13,
+    "defense": 1.27
+  },
+  "FV304": {
+    "nation": "UK",
+    "tier": 6,
+    "type": "SPG",
+    "damage": 870,
+    "winrate": 0.51,
+    "detections": 0.11,
+    "kills": 0.93,
+    "defense": 2.17
+  },
+  "AT 8": {
+    "nation": "UK",
+    "tier": 6,
+    "type": "TD",
+    "damage": 925,
+    "winrate": 0.59,
+    "detections": 0.76,
+    "kills": 1.26,
+    "defense": 1.8
+  },
+  "Churchill Gun Carrier": {
+    "nation": "UK",
+    "tier": 6,
+    "type": "TD",
+    "damage": 733,
+    "winrate": 0.53,
+    "detections": 0.47,
+    "kills": 0.97,
+    "defense": 1.2
+  },
+  "Black Prince": {
+    "nation": "UK",
+    "tier": 7,
+    "type": "HT",
+    "damage": 1068,
+    "winrate": 0.55,
+    "detections": 0.91,
+    "kills": 0.99,
+    "defense": 1.28
+  },
+  "Comet": {
+    "nation": "UK",
+    "tier": 7,
+    "type": "MT",
+    "damage": 969,
+    "winrate": 0.55,
+    "detections": 1.89,
+    "kills": 1.06,
+    "defense": 1.32
+  },
+  "Crusader 5.5-in. SP": {
+    "nation": "UK",
+    "tier": 7,
+    "type": "SPG",
+    "damage": 1234,
+    "winrate": 0.48,
+    "detections": 0.04,
+    "kills": 0.83,
+    "defense": 0.66
+  },
+  "AT 15A": {
+    "nation": "UK",
+    "tier": 7,
+    "type": "TD",
+    "damage": 1025,
+    "winrate": 0.52,
+    "detections": 0.81,
+    "kills": 0.94,
+    "defense": 1.31
+  },
+  "AT 7": {
+    "nation": "UK",
+    "tier": 7,
+    "type": "TD",
+    "damage": 1267,
+    "winrate": 0.57,
+    "detections": 0.72,
+    "kills": 1.22,
+    "defense": 1.2
+  },
+  "Caernarvon": {
+    "nation": "UK",
+    "tier": 8,
+    "type": "HT",
+    "damage": 1283,
+    "winrate": 0.52,
+    "detections": 1.1,
+    "kills": 0.87,
+    "defense": 1.06
+  },
+  "Centurion Mk. I": {
+    "nation": "UK",
+    "tier": 8,
+    "type": "MT",
+    "damage": 1221,
+    "winrate": 0.54,
+    "detections": 1.3,
+    "kills": 0.9,
+    "defense": 1.16
+  },
+  "FV207": {
+    "nation": "UK",
+    "tier": 8,
+    "type": "SPG",
+    "damage": 1297,
+    "winrate": 0.47,
+    "detections": 0.07,
+    "kills": 0.89,
+    "defense": 0.6
+  },
+  "AT 15": {
+    "nation": "UK",
+    "tier": 8,
+    "type": "TD",
+    "damage": 1572,
+    "winrate": 0.52,
+    "detections": 0.67,
+    "kills": 1.18,
+    "defense": 1.44
+  },
+  "Conqueror Mk.1": {
+    "nation": "UK",
+    "tier": 9,
+    "type": "HT",
+    "damage": 1659,
+    "winrate": 0.49,
+    "detections": 1.03,
+    "kills": 0.95,
+    "defense": 0.8
+  },
+  "Centurion Mk. 7/1": {
+    "nation": "UK",
+    "tier": 9,
+    "type": "MT",
+    "damage": 1523,
+    "winrate": 0.50,
+    "detections": 1.28,
+    "kills": 0.91,
+    "defense": 0.85
+  },
+  "FV3805": {
+    "nation": "UK",
+    "tier": 9,
+    "type": "SPG",
+    "damage": 1506,
+    "winrate": 0.47,
+    "detections": 0.03,
+    "kills": 0.84,
+    "defense": 0.58
+  },
+  "Tortoise": {
+    "nation": "UK",
+    "tier": 9,
+    "type": "TD",
+    "damage": 1833,
+    "winrate": 0.52,
+    "detections": 0.6,
+    "kills": 1.14,
+    "defense": 1.11
+  },
+  "FV215b": {
+    "nation": "UK",
+    "tier": 10,
+    "type": "HT",
+    "damage": 1914,
+    "winrate": 0.46,
+    "detections": 1.08,
+    "kills": 0.98,
+    "defense": 0.86
+  },
+  "FV4202": {
+    "nation": "UK",
+    "tier": 10,
+    "type": "MT",
+    "damage": 1723,
+    "winrate": 0.47,
+    "detections": 1.43,
+    "kills": 0.95,
+    "defense": 0.63
+  },
+  "Conqueror Gun Carriage": {
+    "nation": "UK",
+    "tier": 10,
+    "type": "SPG",
+    "damage": 1712,
+    "winrate": 0.47,
+    "detections": 0.04,
+    "kills": 0.84,
+    "defense": 0.63
+  },
+  "FV215b (183)": {
+    "nation": "UK",
+    "tier": 10,
+    "type": "TD",
+    "damage": 2208,
+    "winrate": 0.47,
+    "detections": 0.62,
+    "kills": 1.13,
+    "defense": 0.63
+  },
+  "T1 Cunningham": {
+    "nation": "US",
+    "tier": 1,
+    "type": "LT",
+    "damage": 258,
+    "winrate": 0.63,
+    "detections": 2.63,
+    "kills": 2.08,
+    "defense": 1.74
+  },
+  "M2 Light Tank": {
+    "nation": "US",
+    "tier": 2,
+    "type": "LT",
+    "damage": 263,
+    "winrate": 0.61,
+    "detections": 2.72,
+    "kills": 1.62,
+    "defense": 1.65
+  },
+  "T1 E6": {
+    "nation": "US",
+    "tier": 2,
+    "type": "LT",
+    "damage": 243,
+    "winrate": 0.60,
+    "detections": 2,
+    "kills": 1.45,
+    "defense": 1.34
+  },
+  "T2 Light Tank": {
+    "nation": "US",
+    "tier": 2,
+    "type": "LT",
+    "damage": 242,
+    "winrate": 0.60,
+    "detections": 3.12,
+    "kills": 1.47,
+    "defense": 1.44
+  },
+  "T2 Medium Tank": {
+    "nation": "US",
+    "tier": 2,
+    "type": "MT",
+    "damage": 270,
+    "winrate": 0.60,
+    "detections": 1.84,
+    "kills": 1.65,
+    "defense": 1.57
+  },
+  "T57": {
+    "nation": "US",
+    "tier": 2,
+    "type": "SPG",
+    "damage": 275,
+    "winrate": 0.55,
+    "detections": 0.41,
+    "kills": 1.46,
+    "defense": 2.19
+  },
+  "T18": {
+    "nation": "US",
+    "tier": 2,
+    "type": "TD",
+    "damage": 343,
+    "winrate": 0.61,
+    "detections": 1.2,
+    "kills": 2.35,
+    "defense": 1.68
+  },
+  "M22 Locust": {
+    "nation": "US",
+    "tier": 3,
+    "type": "LT",
+    "damage": 279,
+    "winrate": 0.59,
+    "detections": 3,
+    "kills": 1.17,
+    "defense": 1.24
+  },
+  "M3 Stuart": {
+    "nation": "US",
+    "tier": 3,
+    "type": "LT",
+    "damage": 234,
+    "winrate": 0.57,
+    "detections": 2.68,
+    "kills": 1,
+    "defense": 1.36
+  },
+  "MTLS-1G14": {
+    "nation": "US",
+    "tier": 3,
+    "type": "LT",
+    "damage": 208,
+    "winrate": 0.53,
+    "detections": 1.02,
+    "kills": 0.91,
+    "defense": 1.17
+  },
+  "M2 Medium Tank": {
+    "nation": "US",
+    "tier": 3,
+    "type": "MT",
+    "damage": 280,
+    "winrate": 0.56,
+    "detections": 1.42,
+    "kills": 1.27,
+    "defense": 1.09
+  },
+  "Sexton I": {
+    "nation": "US",
+    "tier": 3,
+    "type": "SPG",
+    "damage": null,
+    "winrate": null,
+    "detections": null,
+    "kills": null,
+    "defense": null
+  },
+  "M7 Priest": {
+    "nation": "US",
+    "tier": 3,
+    "type": "SPG",
+    "damage": 575,
+    "winrate": 0.52,
+    "detections": 0.12,
+    "kills": 1.06,
+    "defense": 1.98
+  },
+  "T82": {
+    "nation": "US",
+    "tier": 3,
+    "type": "TD",
+    "damage": 371,
+    "winrate": 0.59,
+    "detections": 1.29,
+    "kills": 1.51,
+    "defense": 1.05
+  },
+  "M5 Stuart": {
+    "nation": "US",
+    "tier": 4,
+    "type": "LT",
+    "damage": 264,
+    "winrate": 0.56,
+    "detections": 2.88,
+    "kills": 0.81,
+    "defense": 0.93
+  },
+  "M3 Lee": {
+    "nation": "US",
+    "tier": 4,
+    "type": "MT",
+    "damage": 330,
+    "winrate": 0.53,
+    "detections": 0.85,
+    "kills": 0.99,
+    "defense": 0.84
+  },
+  "M37": {
+    "nation": "US",
+    "tier": 4,
+    "type": "SPG",
+    "damage": 400,
+    "winrate": 0.52,
+    "detections": 0.19,
+    "kills": 1.11,
+    "defense": 1.84
+  },
+  "M8A1": {
+    "nation": "US",
+    "tier": 4,
+    "type": "TD",
+    "damage": 490,
+    "winrate": 0.58,
+    "detections": 1.51,
+    "kills": 1.35,
+    "defense": 1.71
+  },
+  "T40": {
+    "nation": "US",
+    "tier": 4,
+    "type": "TD",
+    "damage": 482,
+    "winrate": 0.57,
+    "detections": 1.1,
+    "kills": 1.31,
+    "defense": 1.33
+  },
+  "T1 Heavy Tank": {
+    "nation": "US",
+    "tier": 5,
+    "type": "HT",
+    "damage": 641,
+    "winrate": 0.56,
+    "detections": 1.16,
+    "kills": 1.26,
+    "defense": 1.19
+  },
+  "T14": {
+    "nation": "US",
+    "tier": 5,
+    "type": "HT",
+    "damage": 606,
+    "winrate": 0.56,
+    "detections": 1.55,
+    "kills": 1.38,
+    "defense": 1.34
+  },
+  "M24 Chaffee": {
+    "nation": "US",
+    "tier": 5,
+    "type": "LT",
+    "damage": 518,
+    "winrate": 0.54,
+    "detections": 2.7,
+    "kills": 0.68,
+    "defense": 0.88
+  },
+  "M4 Sherman": {
+    "nation": "US",
+    "tier": 5,
+    "type": "MT",
+    "damage": 791,
+    "winrate": 0.62,
+    "detections": 1.59,
+    "kills": 1.71,
+    "defense": 1.34
+  },
+  "M4A2E4": {
+    "nation": "US",
+    "tier": 5,
+    "type": "MT",
+    "damage": 380,
+    "winrate": 0.52,
+    "detections": 1.45,
+    "kills": 0.89,
+    "defense": 0.86
+  },
+  "M7": {
+    "nation": "US",
+    "tier": 5,
+    "type": "MT",
+    "damage": 432,
+    "winrate": 0.54,
+    "detections": 2.19,
+    "kills": 0.96,
+    "defense": 1.14
+  },
+  "Ram-II": {
+    "nation": "US",
+    "tier": 5,
+    "type": "MT",
+    "damage": 543,
+    "winrate": 0.57,
+    "detections": 1.41,
+    "kills": 1.21,
+    "defense": 1.34
+  },
+  "M41": {
+    "nation": "US",
+    "tier": 5,
+    "type": "SPG",
+    "damage": 934,
+    "winrate": 0.51,
+    "detections": 0.07,
+    "kills": 1.08,
+    "defense": 1.43
+  },
+  "M10 Wolverine": {
+    "nation": "US",
+    "tier": 5,
+    "type": "TD",
+    "damage": 625,
+    "winrate": 0.56,
+    "detections": 0.98,
+    "kills": 1.26,
+    "defense": 1.44
+  },
+  "T49": {
+    "nation": "US",
+    "tier": 5,
+    "type": "TD",
+    "damage": 679,
+    "winrate": 0.58,
+    "detections": 1.72,
+    "kills": 1.41,
+    "defense": 1.64
+  },
+  "M6": {
+    "nation": "US",
+    "tier": 6,
+    "type": "HT",
+    "damage": 854,
+    "winrate": 0.54,
+    "detections": 1.05,
+    "kills": 1.09,
+    "defense": 0.96
+  },
+  "T21": {
+    "nation": "US",
+    "tier": 6,
+    "type": "LT",
+    "damage": 501,
+    "winrate": 0.53,
+    "detections": 2.51,
+    "kills": 0.64,
+    "defense": 0.85
+  },
+  "M4A3E2 Sherman Jumbo": {
+    "nation": "US",
+    "tier": 6,
+    "type": "MT",
+    "damage": 845,
+    "winrate": 0.57,
+    "detections": 1.23,
+    "kills": 1.22,
+    "defense": 1.41
+  },
+  "M4A3E8 Sherman": {
+    "nation": "US",
+    "tier": 6,
+    "type": "MT",
+    "damage": 708,
+    "winrate": 0.55,
+    "detections": 1.54,
+    "kills": 1.05,
+    "defense": 1.16
+  },
+  "M44": {
+    "nation": "US",
+    "tier": 6,
+    "type": "SPG",
+    "damage": 870,
+    "winrate": 0.50,
+    "detections": 0.08,
+    "kills": 0.86,
+    "defense": 1.34
+  },
+  "M18 Hellcat": {
+    "nation": "US",
+    "tier": 6,
+    "type": "TD",
+    "damage": 985,
+    "winrate": 0.58,
+    "detections": 1.51,
+    "kills": 1.34,
+    "defense": 1.64
+  },
+  "M36 Jackson": {
+    "nation": "US",
+    "tier": 6,
+    "type": "TD",
+    "damage": 836,
+    "winrate": 0.55,
+    "detections": 0.93,
+    "kills": 1.1,
+    "defense": 1.29
+  },
+  "T29": {
+    "nation": "US",
+    "tier": 7,
+    "type": "HT",
+    "damage": 1270,
+    "winrate": 0.56,
+    "detections": 1.09,
+    "kills": 1.16,
+    "defense": 1.1
+  },
+  "T71": {
+    "nation": "US",
+    "tier": 7,
+    "type": "LT",
+    "damage": 763,
+    "winrate": 0.53,
+    "detections": 2.69,
+    "kills": 0.76,
+    "defense": 0.83
+  },
+  "T20": {
+    "nation": "US",
+    "tier": 7,
+    "type": "MT",
+    "damage": 945,
+    "winrate": 0.55,
+    "detections": 1.73,
+    "kills": 0.99,
+    "defense": 1.04
+  },
+  "M12": {
+    "nation": "US",
+    "tier": 7,
+    "type": "SPG",
+    "damage": 1265,
+    "winrate": 0.49,
+    "detections": 0.05,
+    "kills": 0.84,
+    "defense": 0.96
+  },
+  "T25 AT": {
+    "nation": "US",
+    "tier": 7,
+    "type": "TD",
+    "damage": 1076,
+    "winrate": 0.54,
+    "detections": 0.87,
+    "kills": 1.08,
+    "defense": 1.18
+  },
+  "T25/2": {
+    "nation": "US",
+    "tier": 7,
+    "type": "TD",
+    "damage": 1054,
+    "winrate": 0.54,
+    "detections": 1.03,
+    "kills": 1.03,
+    "defense": 1.4
+  },
+  "M6A2E1": {
+    "nation": "US",
+    "tier": 8,
+    "type": "HT",
+    "damage": 1073,
+    "winrate": 0.46,
+    "detections": 1.27,
+    "kills": 0.85,
+    "defense": 0.85
+  },
+  "T32": {
+    "nation": "US",
+    "tier": 8,
+    "type": "HT",
+    "damage": 1375,
+    "winrate": 0.53,
+    "detections": 1.24,
+    "kills": 1.01,
+    "defense": 1.03
+  },
+  "T34": {
+    "nation": "US",
+    "tier": 8,
+    "type": "HT",
+    "damage": 1341,
+    "winrate": 0.51,
+    "detections": 0.84,
+    "kills": 0.89,
+    "defense": 0.76
+  },
+  "T23": {
+    "nation": "US",
+    "tier": 8,
+    "type": "MT",
+    "damage": 1144,
+    "winrate": 0.53,
+    "detections": 1.57,
+    "kills": 0.94,
+    "defense": 1.18
+  },
+  "M26 Pershing": {
+    "nation": "US",
+    "tier": 8,
+    "type": "MT",
+    "damage": 1144,
+    "winrate": 0.53,
+    "detections": 1.57,
+    "kills": 0.94,
+    "defense": 1.18
+  },
+  "T26E4 SuperPershing": {
+    "nation": "US",
+    "tier": 8,
+    "type": "MT",
+    "damage": 1168,
+    "winrate": 0.52,
+    "detections": 0.95,
+    "kills": 0.91,
+    "defense": 1.16
+  },
+  "T69": {
+    "nation": "US",
+    "tier": 8,
+    "type": "MT",
+    "damage": 1409,
+    "winrate": 0.54,
+    "detections": 1.37,
+    "kills": 1.14,
+    "defense": 1.5
+  },
+  "M40/M43": {
+    "nation": "US",
+    "tier": 8,
+    "type": "SPG",
+    "damage": 1469,
+    "winrate": 0.48,
+    "detections": 0.07,
+    "kills": 0.92,
+    "defense": 0.6
+  },
+  "T28": {
+    "nation": "US",
+    "tier": 8,
+    "type": "TD",
+    "damage": 1383,
+    "winrate": 0.50,
+    "detections": 0.53,
+    "kills": 1.04,
+    "defense": 1.01
+  },
+  "T28 Prototype": {
+    "nation": "US",
+    "tier": 8,
+    "type": "TD",
+    "damage": 1495,
+    "winrate": 0.51,
+    "detections": 0.52,
+    "kills": 1.1,
+    "defense": 1.17
+  },
+  "M103": {
+    "nation": "US",
+    "tier": 9,
+    "type": "HT",
+    "damage": 1615,
+    "winrate": 0.50,
+    "detections": 1.13,
+    "kills": 0.96,
+    "defense": 0.78
+  },
+  "M46 Patton": {
+    "nation": "US",
+    "tier": 9,
+    "type": "MT",
+    "damage": 1527,
+    "winrate": 0.52,
+    "detections": 1.72,
+    "kills": 1.04,
+    "defense": 0.9
+  },
+  "T54E1": {
+    "nation": "US",
+    "tier": 9,
+    "type": "MT",
+    "damage": 1727,
+    "winrate": 0.52,
+    "detections": 1.09,
+    "kills": 1.19,
+    "defense": 0.88
+  },
+  "M53/M55": {
+    "nation": "US",
+    "tier": 9,
+    "type": "SPG",
+    "damage": 1667,
+    "winrate": 0.47,
+    "detections": 0.03,
+    "kills": 0.88,
+    "defense": 0.58
+  },
+  "T30": {
+    "nation": "US",
+    "tier": 9,
+    "type": "TD",
+    "damage": 1774,
+    "winrate": 0.50,
+    "detections": 0.76,
+    "kills": 1.06,
+    "defense": 0.71
+  },
+  "T95": {
+    "nation": "US",
+    "tier": 9,
+    "type": "TD",
+    "damage": 1680,
+    "winrate": 0.49,
+    "detections": 0.48,
+    "kills": 1.08,
+    "defense": 0.82
+  },
+  "T110E5": {
+    "nation": "US",
+    "tier": 10,
+    "type": "HT",
+    "damage": 1825,
+    "winrate": 0.48,
+    "detections": 1.23,
+    "kills": 0.93,
+    "defense": 0.79
+  },
+  "T57 Heavy Tank": {
+    "nation": "US",
+    "tier": 10,
+    "type": "HT",
+    "damage": 2171,
+    "winrate": 0.49,
+    "detections": 0.88,
+    "kills": 1.18,
+    "defense": 0.9
+  },
+  "M48A1 Patton": {
+    "nation": "US",
+    "tier": 10,
+    "type": "MT",
+    "damage": 1725,
+    "winrate": 0.49,
+    "detections": 1.61,
+    "kills": 0.98,
+    "defense": 0.74
+  },
+  "M60": {
+    "nation": "US",
+    "tier": 10,
+    "type": "MT",
+    "damage": 1715,
+    "winrate": 0.46,
+    "detections": 1.47,
+    "kills": 0.83,
+    "defense": 0.5
+  },
+  "T92": {
+    "nation": "US",
+    "tier": 10,
+    "type": "SPG",
+    "damage": 1712,
+    "winrate": 0.47,
+    "detections": 0.04,
+    "kills": 0.83,
+    "defense": 0.63
+  },
+  "T110E3": {
+    "nation": "US",
+    "tier": 10,
+    "type": "TD",
+    "damage": 2076,
+    "winrate": 0.49,
+    "detections": 0.77,
+    "kills": 1.07,
+    "defense": 0.56
+  },
+  "T110E4": {
+    "nation": "US",
+    "tier": 10,
+    "type": "TD",
+    "damage": 2076,
+    "winrate": 0.47,
+    "detections": 0.84,
+    "kills": 1.04,
+    "defense": 0.57
+  },
+  "Observer": {
+    "nation": "",
+    "tier": 1,
+    "type": "LT",
+    "damage": null,
+    "winrate": null,
+    "detections": null,
+    "kills": null,
+    "defense": null
+  }
+}

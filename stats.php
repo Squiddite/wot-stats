@@ -98,6 +98,7 @@
    $mystats->current->avgdetections = $mystats->current->detections / $mystats->current->battles;
    $mystats->current->avgdefense    = $mystats->current->defense / $mystats->current->battles;
    $mystats->current->wn7           = calculateWN7( $mystats->current->battles, $mystats->current->winrate, $mystats->current->avgdetections, $mystats->current->avgdefense, $mystats->current->avgkills, $mystats->current->avgdamage, $mystats->current->avgtier );
+   $mystats->current->wn8           = round( calculateWN8( $mystats->current, true ));
 
    // load last checkpoint
    $hasCheckpoint = false;
@@ -137,6 +138,7 @@
       $mystats->checkpoint->avgdetections = $mystats->checkpoint->detections / $mystats->checkpoint->battles;
       $mystats->checkpoint->avgdefense    = $mystats->checkpoint->defense / $mystats->checkpoint->battles;
       $mystats->checkpoint->wn7           = calculateWN7( $mystats->checkpoint->battles, $mystats->checkpoint->winrate, $mystats->checkpoint->avgdetections, $mystats->checkpoint->avgdefense, $mystats->checkpoint->avgkills, $mystats->checkpoint->avgdamage, $mystats->checkpoint->avgtier );
+      $mystats->checkpoint->wn8           = round( calculateWN8( $mystats->checkpoint ));
    } else {
       $mystats->checkpoint->statsdate     = 0;
       $mystats->checkpoint->battles       = 0;
@@ -152,6 +154,7 @@
       $mystats->checkpoint->avgdetections = 0;
       $mystats->checkpoint->avgdefense    = 0;
       $mystats->checkpoint->wn7           = 0;
+      $mystats->checkpoint->wn8           = 0;
    }
 
    if( $mystats->current->battles > $mystats->checkpoint->battles ) {
@@ -182,16 +185,20 @@
       $mystats->interval->avgdetections = $mystats->interval->detections / $mystats->interval->battles;
       $mystats->interval->avgdefense    = $mystats->interval->defense / $mystats->interval->battles;
       $mystats->interval->wn7           = calculateWN7( $mystats->interval->battles, $mystats->interval->winrate, $mystats->interval->avgdetections, $mystats->interval->avgdefense, $mystats->interval->avgkills, $mystats->interval->avgdamage, $mystats->interval->avgtier );
+      $mystats->interval->wn8           = round( calculateWN8( $mystats->interval ));
 
       $mystats->delta->winrate = $mystats->current->winrate - $mystats->checkpoint->winrate;
       $mystats->delta->avgtier = $mystats->current->avgtier - $mystats->checkpoint->avgtier;
       $mystats->delta->wn7 = $mystats->current->wn7 - $mystats->checkpoint->wn7;
+      $mystats->delta->wn8 = $mystats->current->wn8 - $mystats->checkpoint->wn8;
       if( $mystats->delta->winrate > 0 ) $color["winrate"] = "green"; else $color["winrate"] = "red";
       if( $mystats->delta->winrate > 0 ) $token["winrate"] = "+";
       if( $mystats->delta->avgtier > 0 ) $color["avgtier"] = "green"; else $color["avgtier"] = "red";
       if( $mystats->delta->avgtier > 0 ) $token["avgtier"] = "+";
       if( $mystats->delta->wn7 > 0 ) $color["wn7"] = "green"; else $color["wn7"] = "red";
       if( $mystats->delta->wn7 > 0 ) $token["wn7"] = "+";
+      if( $mystats->delta->wn8 > 0 ) $color["wn8"] = "green"; else $color["wn8"] = "red";
+      if( $mystats->delta->wn8 > 0 ) $token["wn8"] = "+";
 
       foreach( $mystats->interval->tanks as $tankname => $vehicle ) $tankSort[$tankname] = $vehicle->battles;
       asort( $tankSort );
@@ -299,6 +306,12 @@
       <td bgcolor=e2e2e2>{$mystats->current->wn7}</td>
       <td bgcolor=e2e2e2>{$mystats->interval->wn7} <font size=-1 color={$color["wn7"]}>({$token["wn7"]}{$mystats->delta->wn7})</font></td>
    </tr>
+   <tr>
+      <td><b>WN8 Rating</b></td>
+      <td bgcolor=e2e2e2>{$mystats->checkpoint->wn8}</td>
+      <td bgcolor=e2e2e2>{$mystats->current->wn8}</td>
+      <td bgcolor=e2e2e2>{$mystats->interval->wn8} <font size=-1 color={$color["wn8"]}>({$token["wn8"]}{$mystats->delta->wn8})</font></td>
+   </tr>
 </table>
 <br /><br />
 <div>
@@ -393,6 +406,61 @@ function calculateWN7( $battles, $winrate, $detections, $defense, $kills, $damag
       / ( 1 + exp(( $averagetier - pow(( $battles / 220 ), ( 3 / $averagetier ))) * 1.5 )));
 
    return $wn7;
+}
+
+function calculateWN8( $stats, $debug = false ) {
+   $wn8Calculation = new stdClass;
+   $wn8Baselines = json_decode( file_get_contents( "wn8baselines.json" ));
+
+   $wn8Calculation->constants->coefficients->damage = 0.23;
+   $wn8Calculation->constants->coefficients->detections = 0.4047;
+   $wn8Calculation->constants->coefficients->kills = 0.1286;
+   $wn8Calculation->constants->coefficients->defense = 0.1129;
+   $wn8Calculation->constants->coefficients->winrate = 0.695;
+   $wn8Calculation->constants->minimums->kills = 0.2;
+   $wn8Calculation->constants->minimums->detections = 0.4;
+   $wn8Calculation->constants->minimums->defense = 1.8;
+   $wn8Calculation->constants->multipliers->damage = 985;
+   $wn8Calculation->constants->multipliers->detections = 272;
+   $wn8Calculation->constants->multipliers->defense = 136;
+   $wn8Calculation->constants->multipliers->winrate = 162;
+
+   $wn8Calculation->actualValues->battles    = $stats->battles;
+   $wn8Calculation->actualValues->damage     = $stats->damage;
+   $wn8Calculation->actualValues->detections = $stats->detections;
+   $wn8Calculation->actualValues->kills      = $stats->kills;
+   $wn8Calculation->actualValues->defense    = $stats->defense;
+   $wn8Calculation->actualValues->winrate    = $stats->winrate;
+
+   foreach( $stats->tanks as $tankname => $tank ) {
+      if( $debug ) if( !isset( $wn8Baselines->$tankname )) echo "<!-- Warning: Unable to find baselines for tank \"{$tankname}\"<br /> -->\r\n";
+      $wn8Calculation->expectedValues->damage      += $wn8Baselines->$tankname->damage       * $tank->battles;
+      $wn8Calculation->expectedValues->detections  += $wn8Baselines->$tankname->detections   * $tank->battles;
+      $wn8Calculation->expectedValues->kills       += $wn8Baselines->$tankname->kills        * $tank->battles;
+      $wn8Calculation->expectedValues->defense     += $wn8Baselines->$tankname->defense      * $tank->battles;
+      $wn8Calculation->expectedValues->winrate     += $wn8Baselines->$tankname->winrate      * $tank->battles;
+   }
+   $wn8Calculation->expectedValues->winrate = $wn8Calculation->expectedValues->winrate / $wn8Calculation->actualValues->battles * 100;
+
+   $wn8Calculation->performanceRatios->damage      = $wn8Calculation->actualValues->damage      / $wn8Calculation->expectedValues->damage;
+   $wn8Calculation->performanceRatios->detections  = $wn8Calculation->actualValues->detections  / $wn8Calculation->expectedValues->detections;
+   $wn8Calculation->performanceRatios->kills       = $wn8Calculation->actualValues->kills       / $wn8Calculation->expectedValues->kills;
+   $wn8Calculation->performanceRatios->defense     = $wn8Calculation->actualValues->defense     / $wn8Calculation->expectedValues->defense;
+   $wn8Calculation->performanceRatios->winrate     = $wn8Calculation->actualValues->winrate     / $wn8Calculation->expectedValues->winrate;
+
+   $wn8Calculation->calculationLines->winrate      = max( 0, (( $wn8Calculation->performanceRatios->winrate - $wn8Calculation->constants->coefficients->winrate ) / ( 1 - $wn8Calculation->constants->coefficients->winrate )));
+   $wn8Calculation->calculationLines->damage       = max( 0, (( $wn8Calculation->performanceRatios->damage - $wn8Calculation->constants->coefficients->damage ) / ( 1 - $wn8Calculation->constants->coefficients->damage )));
+   $wn8Calculation->calculationLines->kills        = min(( $wn8Calculation->calculationLines->damage + $wn8Calculation->constants->minimums->kills ), max( 0, (( $wn8Calculation->performanceRatios->kills - $wn8Calculation->constants->coefficients->kills ) / ( 1 - $wn8Calculation->constants->coefficients->kills ))));
+   $wn8Calculation->calculationLines->detections   = min(( $wn8Calculation->calculationLines->damage + $wn8Calculation->constants->minimums->detections ), max( 0, (( $wn8Calculation->performanceRatios->detections - $wn8Calculation->constants->coefficients->detections ) / ( 1 - $wn8Calculation->constants->coefficients->detections ))));
+   $wn8Calculation->calculationLines->defense      = min( $wn8Calculation->constants->minimums->defense, max( 0, (( $wn8Calculation->performanceRatios->defense - $wn8Calculation->constants->coefficients->defense ) / ( 1 - $wn8Calculation->constants->coefficients->defense ))));
+
+   $wn8 = ( $wn8Calculation->constants->multipliers->damage * $wn8Calculation->calculationLines->damage )
+      + ( $wn8Calculation->constants->multipliers->detections * $wn8Calculation->calculationLines->detections * $wn8Calculation->calculationLines->kills )
+      + ( $wn8Calculation->constants->multipliers->defense * $wn8Calculation->calculationLines->defense * $wn8Calculation->calculationLines->kills )
+      + ( $wn8Calculation->constants->multipliers->winrate * $wn8Calculation->calculationLines->winrate );
+
+   return $wn8;
+
 }
 
 function cacheApiData( $data, $playerId, $currentTime ) {
